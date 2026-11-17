@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- B8 SEO basics: title (under ~60 chars), meta description (under ~160 chars) -->
+<title>Oracle — Non-visual access to commutative diagrams</title>
+<meta name="description" content="Oracle turns tikz-cd commutative-diagram source into speech-navigable, checkable structure for blind and low-vision mathematicians.">
+<!-- Social preview (Open Graph) -->
+<meta property="og:title" content="Oracle — Non-visual access to commutative diagrams">
+<meta property="og:description" content="A diagram-as-data access layer: read, navigate and verify commutative diagrams by ear.">
+<meta property="og:type" content="website">
+<!-- Favicon: inline SVG placeholder — replace with real logo file when branding is final -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B6B7A'/%3E%3Cpath d='M8 8h12M8 8v16M8 16h10' stroke='%2337DCF2' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+/* ── Oracle landing page starter — single self-contained file, no build step ──
+   Palette follows the project documents (DM-1: deep navy #162235, cyan #37DCF2, teal #1B6B7A).
+   PLACEHOLDER BRANDING: product name "Oracle", the logo block and screenshot frames are
+   placeholders — replace freely once branding is decided. Everything else is real content.
+   Accessibility built in: landmarks, skip link, contrast-checked colours, visible focus,
+   reduced-motion respect, scalable text (no fixed px heights on text containers). */
+:root{
+  --navy:#162235; --navy-2:#1d3350; --cyan:#37DCF2; --cyan-dim:#2ab8cc;
+  --teal:#1B6B7A; --ink:#0f1b2d; --body:#2a3648; --muted:#5b6b80;
+  --bg:#f7fafb; --card:#ffffff; --line:#dbe6ea; --focus:#0b76c4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:Georgia,'Times New Roman',serif;line-height:1.65;color:var(--body);background:var(--bg)}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--cyan);color:var(--navy);padding:.6rem 1rem;font-family:Verdana,Arial,sans-serif;font-weight:bold;z-index:100}
+.skip-link:focus{left:.5rem;top:.5rem}
+.wrap{max-width:1060px;margin:0 auto;padding:0 1.25rem}
+header.site{background:var(--navy);color:#fff}
+.nav{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.9rem 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.65rem;color:#fff;text-decoration:none;font-family:Verdana,Arial,sans-serif}
+.brand svg{display:block}
+.brand .name{font-size:1.15rem;font-weight:bold;letter-spacing:.02em}
+.brand .tag{display:block;font-size:.66rem;font-weight:normal;color:#9fb4c9;text-transform:uppercase;letter-spacing:.14em}
+nav ul{list-style:none;display:flex;gap:1.1rem;flex-wrap:wrap;font-family:Verdana,Arial,sans-serif;font-size:.85rem}
+nav a{color:#cfe0ee;text-decoration:none;padding:.25rem .1rem}
+nav a:hover{color:var(--cyan)}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:4.2rem 0 4.6rem}
+.hero .kicker{font-family:Verdana,Arial,sans-serif;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.7rem);line-height:1.2;max-width:21ch;color:#fff}
+.hero p.lead{margin-top:1.1rem;font-size:1.08rem;max-width:58ch;color:#c4d3e2}
+.cta-row{margin-top:1.8rem;display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;font-family:Verdana,Arial,sans-serif;font-size:.92rem;font-weight:bold;text-decoration:none;padding:.78rem 1.5rem;border-radius:6px}
+.btn-primary{background:var(--cyan);color:var(--navy)}
+.btn-primary:hover{background:#5ee5ff}
+.btn-ghost{border:2px solid #4a6a8a;color:#dce9f5}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.stat-row{display:flex;gap:2.4rem;margin-top:2.6rem;flex-wrap:wrap}
+.stat{border-left:3px solid var(--cyan);padding-left:.9rem}
+.stat b{display:block;font-size:1.6rem;color:#fff;font-family:Verdana,Arial,sans-serif}
+.stat span{font-size:.8rem;color:#9fb4c9}
+main section{padding:3.4rem 0}
+main section.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.35rem,3vw,1.8rem);color:var(--ink);margin-bottom:1rem}
+h2 .num{color:var(--teal);font-family:Verdana,Arial,sans-serif;font-size:.85rem;display:block;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.35rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:1.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.3rem 1.4rem}
+.card h3{font-size:1.02rem;color:var(--ink);margin-bottom:.5rem;font-family:Verdana,Arial,sans-serif}
+.card p{font-size:.93rem}
+.steps{counter-reset:step;margin-top:1.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.3rem 1.4rem 1.2rem}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-14px;left:1.2rem;background:var(--teal);color:#fff;font-family:Verdana,Arial,sans-serif;font-weight:bold;font-size:.8rem;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:.98rem;color:var(--ink);margin:.3rem 0 .45rem;font-family:Verdana,Arial,sans-serif}
+.step p{font-size:.9rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:1.6rem}
+.shot{border:1px dashed #9db4c0;border-radius:8px;min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:repeating-linear-gradient(45deg,#f2f7f9,#f2f7f9 12px,#eaf2f5 12px,#eaf2f5 24px);color:var(--muted);text-align:center;padding:1rem}
+.shot b{font-family:Verdana,Arial,sans-serif;font-size:.85rem;color:var(--teal)}
+.team{display:flex;gap:1.2rem;align-items:flex-start;margin-top:1.2rem;flex-wrap:wrap}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Verdana,Arial,sans-serif;font-size:1.6rem;font-weight:bold;flex:none}
+.team .bio{flex:1;min-width:250px}
+.cta-band{background:var(--navy);color:#fff;padding:3.2rem 0}
+.cta-band h2{color:#fff}
+.cta-band p{color:#c4d3e2;max-width:56ch;margin-bottom:1.4rem}
+footer.site{background:#0d1626;color:#8fa3b8;padding:2.2rem 0;font-size:.85rem;font-family:Verdana,Arial,sans-serif}
+.foot-cols{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+footer ul{list-style:none;display:flex;gap:1.1rem;flex-wrap:wrap}
+footer a{color:#cfe0ee}
+.note{font-size:.8rem;color:var(--muted);margin-top:1.2rem;border-top:1px solid var(--line);padding-top:1rem}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Oracle home">
+      <!-- PLACEHOLDER LOGO — replace with the real mark when branding is final -->
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1B6B7A"/><path d="M8 8h12M8 8v16M8 16h10" stroke="#37DCF2" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      <span><span class="name">Oracle</span><span class="tag">Diagram access</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#prototype">Prototype</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="kicker">Mathematics accessibility for blind and low-vision readers</p>
+    <h1 id="hero-h">Commutative diagrams you can read, navigate and verify by ear.</h1>
+    <p class="lead">Oracle turns existing tikz-cd diagram source into structured, speech-navigable data — so a blind or low-vision student or researcher can explore a diagram's objects and arrows, follow paths, and check its commuting conditions independently.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#problem">Why it matters</a>
+    </div>
+    <div class="stat-row" role="list" aria-label="Key facts">
+      <div class="stat" role="listitem"><b>41%</b><span>of vision-impaired tertiary students often skip graphics¹</span></div>
+      <div class="stat" role="listitem"><b>&lt;29%</b><span>correct answers even from extended verbal descriptions¹</span></div>
+      <div class="stat" role="listitem"><b>0</b><span>tools convert tikz-cd source into non-visual, checkable form¹</span></div>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+
+<section id="problem" aria-labelledby="problem-h">
+  <div class="wrap">
+    <h2 id="problem-h"><span class="num">01 — The problem</span>Advanced mathematics has a visual monopoly on its diagrams.</h2>
+    <p>Algebra, topology and category theory run on commutative diagrams — objects connected by labelled arrows, with conditions that certain paths compose equally. Today those diagrams reach blind and low-vision readers, if at all, as prose descriptions written by a sighted intermediary. The evidence says that is not access: fewer than a third of described mathematical images are understood correctly, and a large share of vision-impaired students simply avoid the graphics altogether — with real consequences for the fields they choose.</p>
+    <p>The workaround that actually survives in practice is reading the raw LaTeX source with a screen reader. That proves linear access works — but it offers no navigation between the parts of a diagram, no overview, and no way to check a commuting condition without working everything out by hand.</p>
+    <p class="note">¹ Butler, Holloway, Marriott &amp; Goncu (2016); Emerson &amp; Anderson (2018); Torres &amp; Barwaldt (2019). Figures from published studies cited on the project's evidence page.</p>
+  </div>
+</section>
+
+<section id="solution" class="alt" aria-labelledby="solution-h">
+  <div class="wrap">
+    <h2 id="solution-h"><span class="num">02 — The solution</span>Treat the diagram as data, not as a picture.</h2>
+    <p>A commutative diagram is already structured information in its source: named objects, labelled arrows between them, and declared path equalities. Oracle builds on that structure instead of fighting the pixels:</p>
+    <div class="steps">
+      <div class="step"><h3>Intake</h3><p>Parse existing tikz-cd and quiver source into a graph of objects and arrows — no re-authoring, no OCR, no sighted intermediary.</p></div>
+      <div class="step"><h3>Navigate</h3><p>Move through the diagram by ear: an overview, then object-by-object and arrow-by-arrow reading, following paths the way the mathematics does.</p></div>
+      <div class="step"><h3>Verify</h3><p>Declared commuting conditions are checked computationally, and the answer — verified, refuted, or unknown — is reported honestly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+  <div class="wrap">
+    <h2 id="features-h"><span class="num">03 — Key features</span>Designed with the mathematics inside.</h2>
+    <div class="cols">
+      <div class="card"><h3>Source-aware intake</h3><p>Works from the LaTeX that authors already write, so published material becomes accessible without anyone redrawing it.</p></div>
+      <div class="card"><h3>Structured speech navigation</h3><p>An explicit reading protocol: objects first, then arrows with their domains and codomains, then the equalities that make the diagram commute.</p></div>
+      <div class="card"><h3>Computational checking</h3><p>Path-equality checks give the reader something prose never can: an answer to "does this square actually commute?"</p></div>
+      <div class="card"><h3>Screen-reader first</h3><p>Built for the tools blind readers already use — the accessibility of the tool itself is the project's credibility test.</p></div>
+      <div class="card"><h3>Open ecosystem path</h3><p>Designed to live inside the open mathematics-publishing ecosystem rather than as another walled tool.</p></div>
+      <div class="card"><h3>No AI in the deliverable</h3><p>Deterministic parsing and checking — the reading you hear is the mathematics that is there.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prototype" class="alt" aria-labelledby="prototype-h">
+  <div class="wrap">
+    <h2 id="prototype-h"><span class="num">04 — The prototype</span>What it looks like today.</h2>
+    <p>The prototype is under active development in weekly sprints. Screenshots will appear here as the interface stabilises.</p>
+    <div class="shots">
+      <!-- PLACEHOLDER SCREENSHOTS — replace each frame with a real screenshot when the prototype exists -->
+      <div class="shot"><b>Screenshot placeholder</b><span>Structured diagram view</span></div>
+      <div class="shot"><b>Screenshot placeholder</b><span>Speech navigation walkthrough</span></div>
+      <div class="shot"><b>Screenshot placeholder</b><span>Commutativity check report</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    <h2 id="team-h"><span class="num">05 — The team</span>Who is building Oracle.</h2>
+    <div class="team">
+      <div class="avatar" aria-hidden="true">O</div>
+      <div class="bio">
+        <p><strong>[Your name]</strong> — developer and researcher. Oracle is being built as a final-year agile project: a solo, evidence-driven build in weekly sprints, grounded in the published accessibility literature and in documented conversations with the communities it serves.</p>
+        <!-- Team section placeholder: solo project — extend or adapt per supervisor's answer on team-worded artefacts -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-band" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h"><span class="num" style="color:#37DCF2">06 — Get involved</span>Tell us what you need to read.</h2>
+    <p>If you are a blind or low-vision student or researcher of mathematics, an accessibility officer, or a lecturer who wants diagram materials that work for every student — we would like to hear from you.</p>
+    <a class="btn btn-primary" href="mailto:contact@example.com?subject=Oracle%20diagram%20access">Email the project</a>
+    <!-- Call to action: mailto keeps the page data-collection-free (no privacy notice required beyond this note).
+         Replace contact@example.com with a real address. Add social links below when accounts exist. -->
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-cols">
+    <div>
+      <p><strong style="color:#fff">Oracle</strong> — non-visual access to commutative diagrams.</p>
+      <p style="margin-top:.4rem">An agile student project. Prototype in development.</p>
+    </div>
+    <div>
+      <ul>
+        <!-- PLACEHOLDER LINKS — point at real repository/social accounts when they exist -->
+        <li><a href="mailto:contact@example.com">Email</a></li>
+        <li><a href="https://github.com/" rel="noopener">Repository</a></li>
+      </ul>
+      <p style="margin-top:.6rem">This page collects no personal data.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
