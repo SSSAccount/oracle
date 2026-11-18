@@ -52,3 +52,6 @@ expected: PB-12, once the repo is pushed to GitHub and the supervisor is added)
 
 Spike 1 — pandoc MathML + MathJax explorer — DONE, reading lane GO (2026-11-18)
 
+Spike 2 — MathCAT 0.7.7 Nemeth braille lane — DONE, braille lane GO (2026-11-18)
+
+

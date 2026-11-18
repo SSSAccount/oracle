@@ -1,0 +1,57 @@
+[pandoc] conversion OK (flag: --math-method=mathml)
+[pandoc] extracted 4 <math> elements
+[mathcat] lib dir  : C:\Users\JoJoI\Documents\Oracle Workspace\oracle\spikes\spike2
+[mathcat] rules dir: C:\Users\JoJoI\Documents\Oracle Workspace\oracle\spikes\spike2\Rules
+[mathcat] version 0.7.7
+[mathcat] SetPreference(BrailleCode,Nemeth) OK
+[mathcat] SetPreference(TTS,None) OK
+
+=== quadratic ===
+  speech : x is equal to; the fraction with numerator; negative b plus or minus; the square root of b squared minus 4 a c; and denominator 2 a
+  nemeth : ⠭⠀⠨⠅⠀⠹⠤⠃⠬⠤⠜⠃⠘⠆⠐⠤⠲⠁⠉⠻⠌⠆⠁⠼
+  decoded: ⠭[1346] ⠀[-] ⠨[46] ⠅[13] ⠀[-] ⠹[1456] ⠤[36] ⠃[12] ⠬[346] ⠤[36] ⠜[345] ⠃[12] ⠘[45] ⠆[23] ⠐[5] ⠤[36] ⠲[256] ⠁[1] ⠉[14] ⠻[12456] ⠌[34] ⠆[23] ⠁[1] ⠼[3456]
+
+=== integral ===
+  speech : the integral from 0, to 1 of; the fraction with numerator; x squared; and denominator x squared plus 1; d x
+  nemeth : ⠮⠰⠴⠘⠂⠐⠹⠭⠘⠆⠐⠌⠭⠘⠆⠐⠬⠂⠼⠙⠭
+  decoded: ⠮[2346] ⠰[56] ⠴[356] ⠘[45] ⠂[2] ⠐[5] ⠹[1456] ⠭[1346] ⠘[45] ⠆[23] ⠐[5] ⠌[34] ⠭[1346] ⠘[45] ⠆[23] ⠐[5] ⠬[346] ⠂[2] ⠼[3456] ⠙[145] ⠭[1346]
+
+=== matrix ===
+  speech : cap a is equal to; the 2 by 2 matrix; row 1; 1, 2; row 2; 3, 4
+  nemeth : ⠠⠁⠀⠨⠅⠀⠠⠷⠼⠂⠀⠼⠆⠀⣍⠒⠀⠼⠲⠠⠾
+  decoded: ⠠[6] ⠁[1] ⠀[-] ⠨[46] ⠅[13] ⠀[-] ⠠[6] ⠷[12356] ⠼[3456] ⠂[2] ⠀[-] ⠼[3456] ⠆[23] ⠀[-] ⣍[13478] ⠒[25] ⠀[-] ⠼[3456] ⠲[256] ⠠[6] ⠾[23456]
+
+=== sum ===
+  speech : the sum from n is equal to 1, to infinity of; the fraction with numerator 1; and denominator n squared; is equal to; the fraction with numerator; pi squared; and denominator 6
+  nemeth : ⠐⠨⠠⠎⠩⠝⠀⠨⠅⠀⠼⠂⠣⠠⠿⠻⠹⠂⠌⠝⠘⠆⠐⠼⠀⠨⠅⠀⠹⠨⠏⠘⠆⠐⠌⠖⠼
+  decoded: ⠐[5] ⠨[46] ⠠[6] ⠎[234] ⠩[146] ⠝[1345] ⠀[-] ⠨[46] ⠅[13] ⠀[-] ⠼[3456] ⠂[2] ⠣[126] ⠠[6] ⠿[123456] ⠻[12456] ⠹[1456] ⠂[2] ⠌[34] ⠝[1345] ⠘[45] ⠆[23] ⠐[5] ⠼[3456] ⠀[-] ⠨[46] ⠅[13] ⠀[-] ⠹[1456] ⠨[46] ⠏[1234] ⠘[45] ⠆[23] ⠐[5] ⠌[34] ⠖[235] ⠼[3456]
+
+=== probe-a+b+c (operand-loss check) ===
+  speech : a plus b plus c
+  nemeth : ⠁⠬⠃⠬⠉
+  decoded: ⠁[1] ⠬[346] ⠃[12] ⠬[346] ⠉[14]
+
+=== probe-sin(x) (operator-loss check) ===
+  speech : sine x
+  nemeth : ⠎⠊⠝⠀⠭
+  decoded: ⠎[234] ⠊[24] ⠝[1345] ⠀[-] ⠭[1346]
+
+=== STRUCTURAL CHECKS (PASS / FAIL / FLAG) ===
+  [PASS] quadratic: fraction indicators (open ⠹ / line ⠌ / close ⠼)
+  [PASS] quadratic: radical ⠜ + termination ⠻ present
+  [PASS] quadratic: superscript ⠘ present (b²)
+  [PASS] integral: integral sign ⠮ present
+  [PASS] integral: subscript ⠰ + superscript ⠘ limits
+  [PASS] integral: fraction indicators present
+  [PASS] matrix: brackets ⠷/⠾ present
+  [PASS] matrix: digits 1, 2, 4 present
+  [PASS] matrix: digit 3 (⠒) present in Nemeth
+  [PASS] sum: directly-under ⠩ + directly-over ⠣ present
+  [PASS] sum: infinity ⠠⠿ present
+  [PASS] sum: Greek pi ⠨⠏ present
+  [PASS] sum: two fractions (⠹ opens ×2 and ⠌ lines ×2)
+  [PASS] probe a+b+c: all operands a, b, c present
+  [PASS] probe a+b+c: exactly two plus signs ⠬
+  [PASS] probe sin(x): s, i, n, x all present
+
+16 PASS / 0 FAIL / 0 FLAG
