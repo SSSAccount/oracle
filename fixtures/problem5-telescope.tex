@@ -1,0 +1,40 @@
+% Oracle fixture 5 - telescoping series (nested-fraction stress case),
+% hand-written 2026-11-18
+% Corpus v0, Track A reading lane. Plain LaTeX, no packages needed.
+% Expected math elements: 7 total (6 display, 1 inline) - checked by oracle.
+
+\section*{Problem 5: A Telescoping Series}
+
+Show that
+\[ \sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1 \]
+by writing the summand as a difference of two fractions.
+
+\section*{Solution}
+
+\textbf{Step 1.} Decompose the summand:
+\[
+\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}.
+\]
+
+\textbf{Step 2.} The partial sums telescope. For the first three terms,
+\[
+\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4}
+= 1 - \frac{1}{4},
+\]
+and in general the $N$-th partial sum is
+\[
+S_{N} = 1 - \frac{1}{N+1}.
+\]
+
+\textbf{Step 3.} Now let the number of terms grow without bound:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+= \lim_{N \to \infty} \left( 1 - \frac{1}{N+1} \right)
+= 1.
+\]
+
+\section*{Answer}
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1.
+\]

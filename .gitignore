@@ -29,3 +29,4 @@ spikes/spike2/libmathcat_py-64-3.13-win.zip
 spikes/spike2/Rules.zip
 spikes/spike2/libmathcat_py.pyd
 spikes/spike2/Rules/
+fixtures/*-preview.html

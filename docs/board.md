@@ -51,7 +51,11 @@ expected: PB-12, once the repo is pushed to GitHub and the supervisor is added)
      supervisor add are part of the card). The stand-up log records this blocker daily
 
 Spike 1 — pandoc MathML + MathJax explorer — DONE, reading lane GO (2026-11-18)
-
 Spike 2 — MathCAT 0.7.7 Nemeth braille lane — DONE, braille lane GO (2026-11-18)
+
+Phase 2 - fixture corpus v0 - DONE (5 worked problems, 2026-11-18)
+
+
+
 
 

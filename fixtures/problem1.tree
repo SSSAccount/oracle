@@ -1,0 +1,120 @@
+# Oracle expected trees - fixture 1 (derivative via quotient rule)
+# Hand-written from problem1-derivative.tex, 2026-11-18, BEFORE
+# consulting any converter output (Phase 2 ground rule).
+# Elements numbered in document order; total must match the
+# fixture header count (8).
+
+== element 1
+# f(x) = (2x+1)/(x^2+3)
+whole: eq
+  lhs: flat "f ( x )"
+  rhs: frac
+    num: flat "2 x + 1"
+    den:
+      - sup
+        base: ident "x"
+        exp: num 2
+      - op "+"
+      - num 3
+
+== element 2
+# u = 2x+1 (inline)
+whole: eq
+  lhs: ident "u"
+  rhs: flat "2 x + 1"
+
+== element 3
+# v = x^2+3 (inline)
+whole: eq
+  lhs: ident "v"
+  rhs:
+    - sup
+      base: ident "x"
+      exp: num 2
+    - op "+"
+    - num 3
+
+== element 4
+# f'(x) = [2(x^2+3) - (2x+1) * 2x] / (x^2+3)^2   (Step 1, quotient rule)
+whole: eq
+  lhs: flat "f ' ( x )"
+  rhs: frac
+    num:
+      - num 2
+      - group
+        body:
+          - sup
+            base: ident "x"
+            exp: num 2
+          - op "+"
+          - num 3
+      - op "-"
+      - group
+        body: flat "2 x + 1"
+      - op "*"
+      - num 2
+      - ident "x"
+    den: sup
+      base: group
+        body: ...
+      exp: num 2
+
+== element 5
+# 2x^2 + 6 - 4x^2 - 2x = -2x^2 - 2x + 6   (Step 2, expand numerator)
+whole: eq
+  lhs:
+    - num 2
+    - sup
+      base: ident "x"
+      exp: num 2
+    - op "+"
+    - num 6
+    - op "-"
+    - num 4
+    - sup
+      base: ident "x"
+      exp: num 2
+    - op "-"
+    - num 2
+    - ident "x"
+  rhs:
+    - op "-"
+    - num 2
+    - sup
+      base: ident "x"
+      exp: num 2
+    - op "-"
+    - num 2
+    - ident "x"
+    - op "+"
+    - num 6
+
+== element 6
+# -2 (inline)
+whole: flat "- 2"
+
+== element 7
+# f'(x) = -2(x^2+x-3)/(x^2+3)^2   (Step 3, factored form)
+whole: eq
+  lhs: flat "f ' ( x )"
+  rhs: frac
+    num:
+      - op "-"
+      - num 2
+      - group
+        body:
+          - sup
+            base: ident "x"
+            exp: num 2
+          - op "+"
+          - ident "x"
+          - op "-"
+          - num 3
+    den: sup
+      base: group
+        body: ...
+      exp: num 2
+
+== element 8
+# Answer: identical expression to element 7
+same: element 7
