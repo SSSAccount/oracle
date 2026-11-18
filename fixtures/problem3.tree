@@ -1,0 +1,65 @@
+; problem3.tree — authored blind from 04-PROBLEMS/problem3-matrices.tex
+; author: Me
+; date: 2026-11-18   source read: top to bottom, once
+
+element 1 — the whole equation: matrix squared equals result matrix
+1 eq
+  lhs: element 2
+  rhs: element 4
+
+element 2 — left side: the matrix raised to the power 2
+2 sup
+  base: element 3
+  exp: num  2
+
+element 3 — the 2x2 matrix with entries a b / c d
+3 mat
+  - flat
+    - ident  a
+    - ident  b
+  - flat
+    - ident  c
+    - ident  d
+
+element 4 — the result matrix, 2 rows by 2 cells
+4 mat
+  - flat
+    - element 5
+    - element 6
+  - flat
+    - element 7
+    - element 8
+
+element 5 — cell row 1 col 1: a^2 + bc
+5 flat
+  - sup
+    base: ident  a
+    exp: num  2
+  - op  +
+  - ident  b
+  - ident  c
+
+element 6 — cell row 1 col 2: ab + bd
+6 flat
+  - ident  a
+  - ident  b
+  - op  +
+  - ident  b
+  - ident  d
+
+element 7 — cell row 2 col 1: ac + cd
+7 flat
+  - ident  a
+  - ident  c
+  - op  +
+  - ident  c
+  - ident  d
+
+element 8 — cell row 2 col 2: bc + d^2
+8 flat
+  - ident  b
+  - ident  c
+  - op  +
+  - sup
+    base: ident  d
+    exp: num  2
