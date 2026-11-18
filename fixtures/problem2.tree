@@ -1,0 +1,39 @@
+; problem2.tree — authored blind from 04-PROBLEMS/problem2-integral.tex
+; author: Me
+; date: 2026-11-18   source read: top to bottom, once
+
+element 1 — the whole expression: definite integral from 0 to pi/2
+1 int
+  lo: num  0
+  hi: flat
+    - ident  pi
+    - op  /
+    - num  2
+  body: element 2
+
+element 2 — the integrand: the fraction followed by dx
+2 flat
+  - element 3
+  - flat
+    - ident  d
+    - ident  x
+
+element 3 — the fraction 2 sin x over 1 + sin^2 x
+3 frac
+  num: element 4
+  den: element 5
+
+element 4 — numerator: the run 2 sin x
+4 flat
+  - num  2
+  - op  sin
+  - ident  x
+
+element 5 — denominator: the run 1 + sin^2 x
+5 flat
+  - num  1
+  - op  +
+  - sup
+    base: op  sin
+    exp: num  2
+  - ident  x
