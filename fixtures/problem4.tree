@@ -1,0 +1,44 @@
+; problem4.tree — authored blind from 04-PROBLEMS/problem4-series.tex
+; author: Me
+; date: 2026-11-18   source read: top to bottom, once
+
+element 1 — the whole expression: the series sum from n=0 to infinity
+1 sum
+  lo: flat
+    - ident  n
+    - op  =
+    - num  0
+  hi: ident  inf
+  body: element 2
+
+element 2 — the summand: coefficient fraction times (x-a)^n
+2 flat
+  - element 3
+  - element 6
+
+element 3 — the fraction f^(n)(a) over n!
+3 frac
+  num: element 4
+  den: flat
+    - ident  n
+    - op  !
+
+element 4 — numerator: f to the (n), then (a)
+4 flat
+  - element 5
+  - group
+    - ident  a
+
+element 5 — f with superscript (n)
+5 sup
+  base: ident  f
+  exp: group
+    - ident  n
+
+element 6 — (x-a) raised to the n
+6 sup
+  base: group
+    - ident  x
+    - op  -
+    - ident  a
+  exp: ident  n
