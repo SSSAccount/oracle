@@ -1,0 +1,55 @@
+; problem5.tree — authored blind from 04-PROBLEMS/problem5-telescope.tex
+; author: Me
+; date: 2026-11-18   source read: top to bottom, once
+
+element 1 — the whole statement: S_N equals the sum equals the closed form
+1 eq
+  lhs: element 2
+  rhs: element 3
+
+element 2 — the name of the partial sum: S sub N
+2 sub
+  base: ident  S
+  sub: ident  N
+
+element 3 — the remaining chain: the sum equals 1 - 1/(N+1)
+3 eq
+  lhs: element 4
+  rhs: element 7
+
+element 4 — the sum from n=1 to N
+4 sum
+  lo: flat
+    - ident  n
+    - op  =
+    - num  1
+  hi: ident  N
+  body: element 5
+
+element 5 — the parenthesized summand
+5 group
+  - element 6
+
+element 6 — the run 1/n - 1/(n+1)
+6 flat
+  - frac
+    num: num  1
+    den: ident  n
+  - op  -
+  - frac
+    num: num  1
+    den: flat
+      - ident  n
+      - op  +
+      - num  1
+
+element 7 — the closed form: 1 - 1/(N+1)
+7 flat
+  - num  1
+  - op  -
+  - frac
+    num: num  1
+    den: flat
+      - ident  N
+      - op  +
+      - num  1
