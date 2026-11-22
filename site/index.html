@@ -10,13 +10,32 @@
 <meta property="og:title" content="Oracle — Non-visual access to commutative diagrams">
 <meta property="og:description" content="A diagram-as-data access layer: read, navigate and verify commutative diagrams by ear.">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<!-- og:image: uncomment and point at a hosted preview image at deployment time
+<meta property="og:image" content="https://YOUR-DOMAIN/social-preview.png">
+<meta name="twitter:image" content="https://YOUR-DOMAIN/social-preview.png">
+-->
+<!-- Structured data (JSON-LD): fill the url fields at deployment time -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Oracle",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "description": "Non-visual access to commutative diagrams: turns tikz-cd source into speech-navigable, checkable structure for blind and low-vision mathematicians.",
+  "url": "https://YOUR-DOMAIN/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 <!-- Favicon: inline SVG placeholder — replace with real logo file when branding is final -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B6B7A'/%3E%3Cpath d='M8 8h12M8 8v16M8 16h10' stroke='%2337DCF2' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-/* ── Oracle landing page starter — single self-contained file, no build step ──
+/* ── Oracle landing page v2 — single self-contained file, no build step ──
    Palette follows the project documents (DM-1: deep navy #162235, cyan #37DCF2, teal #1B6B7A).
-   PLACEHOLDER BRANDING: product name "Oracle", the logo block and screenshot frames are
-   placeholders — replace freely once branding is decided. Everything else is real content.
+   v2 (2026-11-19): worked-example section (real D-01 pullback square + reading protocol),
+   concrete prototype mock-up frames replacing dashed screenshot boxes, solo-team section.
+   Branding (final name, logo mark) remains open pending the branding decision.
    Accessibility built in: landmarks, skip link, contrast-checked colours, visible focus,
    reduced-motion respect, scalable text (no fixed px heights on text containers). */
 :root{
@@ -83,6 +102,29 @@ footer.site{background:#0d1626;color:#8fa3b8;padding:2.2rem 0;font-size:.85rem;f
 footer ul{list-style:none;display:flex;gap:1.1rem;flex-wrap:wrap}
 footer a{color:#cfe0ee}
 .note{font-size:.8rem;color:var(--muted);margin-top:1.2rem;border-top:1px solid var(--line);padding-top:1rem}
+/* Worked example */
+.example-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:1.6rem;align-items:stretch}
+.ex-panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.2rem 1.3rem}
+.ex-panel h3{font-size:.95rem;color:var(--ink);margin-bottom:.8rem;font-family:Verdana,Arial,sans-serif}
+.ex-panel svg{width:100%;height:auto;display:block}
+.speech-demo{background:#0d1626;border-radius:8px;padding:1.1rem 1.2rem;color:#c4d3e2;font-size:.92rem;line-height:1.7}
+.speech-demo p{margin:0 0 .55rem}
+.speech-demo p:last-child{margin-bottom:0}
+.sd-h{color:#37DCF2;font-family:Verdana,Arial,sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem!important}
+.sd-q{margin-top:.9rem!important;border-top:1px dashed #33465c;padding-top:.8rem}
+.sd-q strong{color:#5ee5ff}
+/* Prototype mockup frames */
+.mock{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.mock-head{background:var(--navy);color:#cfe0ee;font-family:Verdana,Arial,sans-serif;font-size:.75rem;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center}
+.mock-head b{color:#fff}
+.mock-body{padding:1rem 1.1rem;font-size:.88rem;line-height:1.65}
+.mock-body .row{display:flex;gap:.6rem;padding:.35rem 0;border-bottom:1px dotted var(--line);flex-wrap:wrap}
+.mock-body .row:last-child{border-bottom:none}
+.mock-body .lbl{color:var(--teal);font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;min-width:8.5ch}
+.mock-body .val{color:var(--body)}
+.mock-body .ok{color:#1a7f4b;font-weight:bold}
+.mock-body .pend{color:#8a6d1a;font-weight:bold}
+.mock-tag{display:inline-block;background:var(--teal);color:#fff;font-family:Verdana,Arial,sans-serif;font-size:.68rem;border-radius:3px;padding:.15rem .5rem;margin-left:.4rem;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -99,6 +141,7 @@ footer a{color:#cfe0ee}
       <ul>
         <li><a href="#problem">Problem</a></li>
         <li><a href="#solution">Solution</a></li>
+        <li><a href="#example">Example</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#prototype">Prototype</a></li>
         <li><a href="#team">Team</a></li>
@@ -117,7 +160,7 @@ footer a{color:#cfe0ee}
     <p class="lead">Oracle turns existing tikz-cd diagram source into structured, speech-navigable data — so a blind or low-vision student or researcher can explore a diagram's objects and arrows, follow paths, and check its commuting conditions independently.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact">Get in touch</a>
-      <a class="btn btn-ghost" href="#problem">Why it matters</a>
+      <a class="btn btn-ghost" href="#example">See it work on a real diagram</a>
     </div>
     <div class="stat-row" role="list" aria-label="Key facts">
       <div class="stat" role="listitem"><b>41%</b><span>of vision-impaired tertiary students often skip graphics¹</span></div>
@@ -150,9 +193,47 @@ footer a{color:#cfe0ee}
   </div>
 </section>
 
+<section id="example" class="alt" aria-labelledby="example-h">
+  <div class="wrap">
+    <h2 id="example-h"><span class="num">03 — A worked example</span>One diagram, two ways to meet it.</h2>
+    <p>Below: a pullback square from a real category-theory textbook (Leinster, <em>Basic Category Theory</em>). A sighted reader meets it as a picture. Oracle reads the same diagram's own source — the structure is identical, the channel is different.</p>
+    <div class="example-grid">
+      <div class="ex-panel">
+        <h3>What a sighted reader sees</h3>
+        <svg viewBox="0 0 320 190" role="img" aria-label="Pullback square: objects A, B, C and P connected by arrows f, g, p1 and p2">
+          <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1B6B7A"/></marker></defs>
+          <g font-family="Georgia, serif" font-size="17" fill="#162235" text-anchor="middle">
+            <text x="70" y="150">P</text><text x="250" y="150">A</text>
+            <text x="70" y="30">B</text><text x="250" y="30">C</text>
+            <text x="140" y="168" font-size="13" font-style="italic" fill="#1B6B7A">p&#8321;</text>
+            <text x="182" y="168" font-size="13" font-style="italic" fill="#1B6B7A">f</text>
+            <text x="46" y="95" font-size="13" font-style="italic" fill="#1B6B7A">p&#8322;</text>
+            <text x="272" y="95" font-size="13" font-style="italic" fill="#1B6B7A">g</text>
+            <line x1="88" y1="143" x2="232" y2="143" stroke="#1B6B7A" stroke-width="1.6" marker-end="url(#arr)"/>
+            <line x1="88" y1="36" x2="232" y2="36" stroke="#1B6B7A" stroke-width="1.6" marker-end="url(#arr)"/>
+            <line x1="70" y1="132" x2="70" y2="48" stroke="#1B6B7A" stroke-width="1.6" marker-end="url(#arr)"/>
+            <line x1="250" y1="132" x2="250" y2="48" stroke="#1B6B7A" stroke-width="1.6" marker-end="url(#arr)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="ex-panel">
+        <h3>What Oracle reads aloud</h3>
+        <div class="speech-demo" aria-label="Structured reading of the pullback square">
+          <p class="sd-h">Overview — 4 objects, 4 arrows, 1 declared equality</p>
+          <p>Objects: P, A, B, C.</p>
+          <p>Arrows: f from A to C. g from B to C. p&#8321; from P to A. p&#8322; from P to B.</p>
+          <p>Declared equality: g &#8728; p&#8322; = f &#8728; p&#8321;.</p>
+          <p class="sd-q">Check: does the square commute? <strong>Verified.</strong></p>
+        </div>
+      </div>
+    </div>
+    <p class="note">Reading protocol follows the research-backed structure: objects first, then arrows with domains and codomains, then the equalities — then the reader can ask for path composites or a commutativity check.</p>
+  </div>
+</section>
+
 <section id="features" aria-labelledby="features-h">
   <div class="wrap">
-    <h2 id="features-h"><span class="num">03 — Key features</span>Designed with the mathematics inside.</h2>
+    <h2 id="features-h"><span class="num">04 — Key features</span>Designed with the mathematics inside.</h2>
     <div class="cols">
       <div class="card"><h3>Source-aware intake</h3><p>Works from the LaTeX that authors already write, so published material becomes accessible without anyone redrawing it.</p></div>
       <div class="card"><h3>Structured speech navigation</h3><p>An explicit reading protocol: objects first, then arrows with their domains and codomains, then the equalities that make the diagram commute.</p></div>
@@ -166,25 +247,50 @@ footer a{color:#cfe0ee}
 
 <section id="prototype" class="alt" aria-labelledby="prototype-h">
   <div class="wrap">
-    <h2 id="prototype-h"><span class="num">04 — The prototype</span>What it looks like today.</h2>
-    <p>The prototype is under active development in weekly sprints. Screenshots will appear here as the interface stabilises.</p>
+    <h2 id="prototype-h"><span class="num">05 — The prototype</span>What it looks like today.</h2>
+    <p>The prototype is under active development in weekly sprints. The three views below are mock-ups of the interface as designed; the underlying lanes are already built and tested — the parser matched hand-encoded textbook diagrams exactly, and the braille lane passed all 16 of its acceptance checks.</p>
     <div class="shots">
-      <!-- PLACEHOLDER SCREENSHOTS — replace each frame with a real screenshot when the prototype exists -->
-      <div class="shot"><b>Screenshot placeholder</b><span>Structured diagram view</span></div>
-      <div class="shot"><b>Screenshot placeholder</b><span>Speech navigation walkthrough</span></div>
-      <div class="shot"><b>Screenshot placeholder</b><span>Commutativity check report</span></div>
+      <div class="mock">
+        <div class="mock-head"><b>Oracle — Diagram view</b><span>fixture: pullback square (D-01)</span></div>
+        <div class="mock-body">
+          <div class="row"><span class="lbl">Source</span><span class="val">tikz-cd, parsed &#10003; — 4 objects, 4 arrows, 1 declared equality</span></div>
+          <div class="row"><span class="lbl">Objects</span><span class="val">P, A, B, C</span></div>
+          <div class="row"><span class="lbl">Arrows</span><span class="val">f: A&#8594;C &nbsp; g: B&#8594;C &nbsp; p&#8321;: P&#8594;A &nbsp; p&#8322;: P&#8594;B</span></div>
+          <div class="row"><span class="lbl">Equality</span><span class="val">g&#8728;p&#8322; = f&#8728;p&#8321;</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">READY</span> — navigable by keyboard and screen reader</span></div>
+        </div>
+      </div>
+      <div class="mock">
+        <div class="mock-head"><b>Oracle — Speech walkthrough</b><span>reading protocol</span></div>
+        <div class="mock-body">
+          <div class="row"><span class="lbl">Step 1</span><span class="val">Overview: 4 objects, 4 arrows, 1 equality</span></div>
+          <div class="row"><span class="lbl">Step 2</span><span class="val">Objects: P, A, B, C</span></div>
+          <div class="row"><span class="lbl">Step 3</span><span class="val">Arrows with domains and codomains</span></div>
+          <div class="row"><span class="lbl">Step 4</span><span class="val">Declared equality read out</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">VALIDATED</span> — MathJax explorer lane, spike 1</span></div>
+        </div>
+      </div>
+      <div class="mock">
+        <div class="mock-head"><b>Oracle — Check report</b><span>three-valued answers</span></div>
+        <div class="mock-body">
+          <div class="row"><span class="lbl">Query</span><span class="val">Does the pullback square commute?</span></div>
+          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="ok">VERIFIED</span> — both composites agree</span></div>
+          <div class="row"><span class="lbl">Query</span><span class="val">General commutativity of the ambient category?</span></div>
+          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="pend">UNKNOWN</span> — not decidable from the diagram alone; reported honestly</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val">DESIGN — checker spine specified, build in backlog</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="team" aria-labelledby="team-h">
   <div class="wrap">
-    <h2 id="team-h"><span class="num">05 — The team</span>Who is building Oracle.</h2>
+    <h2 id="team-h"><span class="num">06 — The team</span>Who is building Oracle.</h2>
     <div class="team">
       <div class="avatar" aria-hidden="true">O</div>
       <div class="bio">
-        <p><strong>[Your name]</strong> — developer and researcher. Oracle is being built as a final-year agile project: a solo, evidence-driven build in weekly sprints, grounded in the published accessibility literature and in documented conversations with the communities it serves.</p>
-        <!-- Team section placeholder: solo project — extend or adapt per supervisor's answer on team-worded artefacts -->
+        <p><strong>[Your name]</strong> — developer and researcher. Oracle is being built as a solo final-year agile project: evidence-driven, in weekly sprints, grounded in the published accessibility literature and validated at every lane (parser, speech, braille) before being trusted. The team-worded artefacts of the module are being mapped onto the solo arrangement with the supervisor's guidance (standing question Q-01).</p>
       </div>
     </div>
   </div>
@@ -192,7 +298,7 @@ footer a{color:#cfe0ee}
 
 <section id="contact" class="cta-band" aria-labelledby="contact-h">
   <div class="wrap">
-    <h2 id="contact-h"><span class="num" style="color:#37DCF2">06 — Get involved</span>Tell us what you need to read.</h2>
+    <h2 id="contact-h"><span class="num" style="color:#37DCF2">07 — Get involved</span>Tell us what you need to read.</h2>
     <p>If you are a blind or low-vision student or researcher of mathematics, an accessibility officer, or a lecturer who wants diagram materials that work for every student — we would like to hear from you.</p>
     <a class="btn btn-primary" href="mailto:contact@example.com?subject=Oracle%20diagram%20access">Email the project</a>
     <!-- Call to action: mailto keeps the page data-collection-free (no privacy notice required beyond this note).

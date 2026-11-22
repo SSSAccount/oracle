@@ -11,32 +11,27 @@ read off it directly.
 
 ## Backlog
 
-* \[ ] PB-08 — Spoken overview of a diagram ("5 objects, 7 arrows, 2 commuting conditions") · 3 · Must
-* \[ ] PB-09 — Navigate object-by-object / arrow-by-arrow with path readings · 5 · Must
-* \[ ] PB-10 — Commutativity conditions checked mechanically, three-valued answers · 8 · Should
-* \[ ] PB-11 — Structural-fidelity check vs the diagram's mathematical content · 5 · Must
-* \[ ] PB-15 — Register domain + deploy landing page over HTTPS · 3 · Should
-* \[ ] PB-16 — Requirements elicitation record from the published-evidence base · 5 · Should
-* \[ ] PB-17 — UML suite + test strategy draft (after elicitation) · 8 · Should
-* \[ ] PB-18 — Hi-fi prototype of the reading interface, accessible by construction · 8 · Could
-* \[ ] PB-19 — Portfolio assembly pass (B7 skeleton, declaration, referencing) · 5 · Should
-* \[ ] PB-20 — Presentation outline + slides draft · 3 · Could
+* [ ] PB-10 — Commutativity conditions checked mechanically, three-valued answers · 8 · Should
+* [ ] PB-15 — Register domain + deploy landing page over HTTPS · 3 · Should
+* [ ] PB-17 — UML suite + test strategy draft (after elicitation) · 8 · Should
+* [ ] PB-18 — Hi-fi prototype of the reading interface, accessible by construction · 8 · Could
+* [ ] PB-19 — Portfolio assembly pass (B7 skeleton, declaration, referencing) · 5 · Should
+* [ ] PB-20 — Presentation outline + slides draft · 3 · Could
+* [ ] PB-21 — Tree spec v0.2 (B1–B7 gap backlog from the author report) · 3 · Should
 
 ## Ready
 
 (empty — items are pulled into In sprint only at sprint planning)
 
-## In sprint — Sprint 0 (Tue 17 Nov – Sun 22 Nov 2026, 8 pts)
+## In sprint — Sprint 2 (Tue 24 Nov – Mon 30 Nov 2026; planning at Sprint 1 close 2026-11-22)
 
-* \[ ] PB-12 — Set up task board + Git repo, add supervisor, seed backlog + working agreement · 2 · Must
-* \[ ] PB-13 — Run Sprint 0 ceremonies and record all four artefacts · 3 · Must
-* \[ ] PB-14 — Ask the supervisor the two framing questions (Q-01, Q-02) · 1 · Must
-* \[ ] PB-06 — Hand-encode one real pullback square as structured data · 2 · Must
+* [ ] PB-05b — Worksheet fixtures: 2–3 module worksheets encoded + per-fixture permission basis (split from PB-05 at Sprint 1 retro; material-logistics card) · 3 · Must
+* [ ] PB-08 — Spoken overview demonstrated on the pullback fixture · 5 · Must
+* [ ] PB-09 — Node/arrow navigation demonstrated on the pullback fixture · 5 · Should
 
 ## In progress
 
-(empty — at most one card here at a time; it moves here the day work starts, and to
-Review the moment the code/docs exist)
+* [ ] PB-12 — Set up task board + Git repo, add supervisor, seed backlog + working agreement · 2 · Must — **blocked on R-11** (GitHub restore); local repo + board mirror live per DEC-008; carried outside the sprint commitments (retro action 1)
 
 ## Review
 
@@ -44,18 +39,18 @@ Review the moment the code/docs exist)
 
 ## Done
 
-(empty — cards land here only when the working agreement §5 checklist passes; first
-expected: PB-12, once the repo is pushed to GitHub and the supervisor is added)
+* [x] PB-13 — Run Sprint 0 ceremonies and record all four artefacts · 3 · Must — closed 2026-11-19 (review + retro written; burndown committed)
+* [x] PB-06 — Hand-encode one real pullback square as structured data · 2 · Must — closed 2026-11-19 (D-01: Leinster BCT 5.1.17(b), fixture + JSON + provenance — `fixtures/diagrams/`)
+* [x] PB-14 — Ask the supervisor the two framing questions (Q-01, Q-02) · 1 · Must — closed 2026-11-19 (asked at the A2 meeting; answers to be recorded by owner from meeting notes — decision log pending table)
+* [x] PB-07 — tikz-cd parser spike: D-01 source → nodes/edges/paths JSON, acceptance = match hand-encoded oracle · 5 · Must — closed 2026-11-22 at sprint close (**GO**: D-01 exact match 19 Nov head start; D-02 quoted-label support, also exact; write-up in `spikes/spike3-tikzcd/spike3-notes.md`)
+* [x] PB-16 — Requirements elicitation record from the published-evidence base (interim path) · 5 · Should — closed 2026-11-22 (portfolio Chapter 4, evidence-based interim path per R-02 mitigation)
 
-<!-- Sprint 0 note: PB-12 cannot reach Done until GitHub access is restored (push +
-     supervisor add are part of the card). The stand-up log records this blocker daily
+## Notes (spike and corpus status — not board columns)
 
-Spike 1 — pandoc MathML + MathJax explorer — DONE, reading lane GO (2026-11-18)
-Spike 2 — MathCAT 0.7.7 Nemeth braille lane — DONE, braille lane GO (2026-11-18)
-
-Phase 2 - fixture corpus v0 - DONE (5 worked problems, 2026-11-18)
-
-
-
-
-
+- Spike 1 — pandoc MathML + MathJax explorer — DONE, reading lane GO (2026-11-18)
+- Spike 2 — MathCAT 0.7.7 Nemeth braille lane — DONE, braille lane GO (2026-11-18, 16/16 checks)
+- Fixture corpus v1 — DONE (5 problem sources + specimen tree; trees 2–5 authored blind with judgment report, `fixtures/author-report.md`; tree-format checker 5/5 PASS)
+- Tree notation spec v0.1 — live (`fixtures/tree-spec.md`; spec-gap findings B1–B7 recorded for v0.2, PB-21)
+- Diagram fixture D-01 (pullback square, Leinster BCT 5.1.17(b)) — DONE 2026-11-19; Sprint 1's PB-07 spike parses its tikz-cd against its hand-encoded JSON
+- Diagram fixture D-02 (general pullback, Leinster Def. 5.1.15) — DONE 2026-11-19; parser extended for quoted labels with subscripts, exact match
+- Sprint 1 closed 2026-11-22 (review + retrospective + burndown in `docs/sprints/sprint-1/`); PB-05 worksheet component split to PB-05b and carried to Sprint 2

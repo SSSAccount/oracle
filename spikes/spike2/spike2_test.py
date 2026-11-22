@@ -18,7 +18,7 @@ Layout auto-detection (first match wins):
          (contains libmathcat_py.so / libmathcat_py.pyd)
   rules: /tmp/mc_rules/rules_x/Rules  |  <script dir>/Rules  |  <script dir>/../Rules
 
-Sandbox:  SPIKE2_OUT=/home/z/my-project/work/spike2 python3.13 scripts/spike2_nemeth_test.py
+Linux:   SPIKE2_OUT=<output dir> python3.13 spike2_test.py
 Windows:  py -3.13 spike2_test.py
 """
 import os

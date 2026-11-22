@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "label": "P",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "n1",
+      "label": "Y",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "n2",
+      "label": "X",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "n3",
+      "label": "Z",
+      "row": 1,
+      "col": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "n0",
+      "to": "n1",
+      "kind": "arrow",
+      "style": "plain",
+      "direction": "r",
+      "label": "p_2"
+    },
+    {
+      "id": "e2",
+      "from": "n0",
+      "to": "n2",
+      "kind": "arrow",
+      "style": "plain",
+      "direction": "d",
+      "label": "p_1"
+    },
+    {
+      "id": "e3",
+      "from": "n1",
+      "to": "n3",
+      "kind": "arrow",
+      "style": "plain",
+      "direction": "d",
+      "label": "t"
+    },
+    {
+      "id": "e4",
+      "from": "n2",
+      "to": "n3",
+      "kind": "arrow",
+      "style": "plain",
+      "direction": "r",
+      "label": "s"
+    }
+  ],
+  "paths": [
+    {
+      "id": "p1",
+      "kind": "node-reading",
+      "order": "row-major",
+      "traversal": [
+        "n0",
+        "n1",
+        "n2",
+        "n3"
+      ]
+    },
+    {
+      "id": "p2",
+      "kind": "arrow-following",
+      "traversal": [
+        "n0",
+        "n1",
+        "n3"
+      ],
+      "edges": [
+        "e1",
+        "e3"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "arrow-following",
+      "traversal": [
+        "n0",
+        "n2",
+        "n3"
+      ],
+      "edges": [
+        "e2",
+        "e4"
+      ]
+    }
+  ]
+}
