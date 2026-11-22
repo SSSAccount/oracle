@@ -25,7 +25,7 @@ Points committed: 15 · Points completed: 10 (PB-07 5, PB-16 5) · Chart: `burnd
 |---|---|---|
 | Sprint 1 planning | 19 Nov 2026 | 15 pts committed (PB-07, PB-05, PB-16); fallback order written; retro actions carried in and applied |
 | Stand-ups | 20, 21, 22 Nov | Rows for all three days committed (`standup-log.md`); written at close — owned in the retrospective; exam day kept a light touch and says so |
-| A3 supervision meeting (Sprint 1 progress) | [date — owner records] | [outcome — owner records from meeting notes] |
+| A3 supervision meeting (Sprint 1 progress) | Scheduled [date — invite] | Cancelled — [reason — from the cancellation message]; no meeting held |
 | A4 review meeting (draft portfolio) | [date — owner records] | [outcome — owner records from meeting notes] |
 | Sprint 1 review (this document) | 22 Nov 2026 | Goal met on the controllable core; PB-05 worksheet component carried |
 | Sprint 1 retrospective | 22 Nov 2026 | Three actions into Sprint 2 (`retrospective.md`) |
@@ -33,11 +33,11 @@ Points committed: 15 · Points completed: 10 (PB-07 5, PB-16 5) · Chart: `burnd
 ## What was not done, and where it went
 
 - **PB-05 worksheet component (carried):** 2–3 module worksheets to be added as fixtures with per-fixture permission basis. Owner-held material; carried to Sprint 2 as a bounded card.
-- **A3/A4 meeting records:** the meetings land inside the sprint window as external checkpoints; their dates and outcomes are recorded by the owner from meeting notes (fields above + Appendix B of the portfolio).
+- **A3/A4 meeting records:** no supervision meeting took place inside the sprint window — every scheduled meeting was cancelled (the record is in Appendix B of the portfolio); the questions meant for them are held for the viva.
 
-## Board / Git / portfolio sync check (done before the supervision meeting)
+## Board / Git / portfolio sync check (done before the scheduled review)
 
-- [x] Board current — PB-07 → Done; PB-16 → Done (interim path, noted); PB-05 stays In sprint with carry note; PB-14 closed at A2 (19 Nov); PB-12 unchanged (blocked, R-11)
+- [x] Board current — PB-07 → Done; PB-16 → Done (interim path, noted); PB-05 stays In sprint with carry note; PB-14 blocked (no supervision meeting possible — re-opened, see the worklog 22 Nov correction); PB-12 unchanged (blocked, R-11)
 - [x] Stand-up log committed through sprint close
 - [x] Draft portfolio updated — §7.3 refreshed from these records (portfolio v2, 22 Nov)
 

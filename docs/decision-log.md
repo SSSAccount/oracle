@@ -20,11 +20,11 @@ bottom; nothing is ever deleted — superseded entries are marked.
 
 | ID | Question | Asked of | Status |
 |---|---|---|---|
-| Q-01 | How do team-worded artefacts (Team Contribution Record, pair ceremonies, Section A contribution wording) map onto the solo arrangement? | Supervisor | **Asked 2026-11-19 (A2 meeting)** — answer to be recorded by owner from meeting notes |
-| Q-02 | Who occupies the client role for requirements elicitation? | Supervisor | **Asked 2026-11-19 (A2 meeting)** — answer to be recorded by owner from meeting notes |
+| Q-01 | How do team-worded artefacts (Team Contribution Record, pair ceremonies, Section A contribution wording) map onto the solo arrangement? | Supervisor | **Could not be asked — every scheduled supervision meeting was cancelled (tutor unavailability during the graduation week; supervisor overseas; no slot before the deadline). Resolved provisionally from the module's published materials; to be confirmed at the viva.** |
+| Q-02 | Who occupies the client role for requirements elicitation? | Supervisor | **Could not be asked — every scheduled supervision meeting was cancelled (see Q-01). Resolved provisionally from the module proforma and group-allocation pack: the supervision arrangement holds the client role in principle; the published evidence base supplied the user needs. To be confirmed at the viva.** |
 
 ## DEC-012 — Ethics route updated to the single-document form
 **Date:** 2026-11-22 · **Status:** Active
 **Context:** The module originally required the UoW Research Ethics Consideration Application **Part A** (with Part B conditional on Part A's outcome). A recent module email replaced the two-part arrangement with a single whole form; the tutor's 19 Nov feedback list ("complete Part A") predates or uses the old naming.
 **Decision:** Fill the new single ethics document in full (scope: no human participants, no personal data, licensed fixtures) instead of Part A + conditional Part B. The portfolio (§5.2) and the feedback-response record cite the single form; a prepared answer pack maps the old Part A/B questions onto the new form.
-**Evidence:** Module email (22 Nov 2026) and the received single form (CSE UG Ethics Declaration v1.0); A2 tutor feedback (19 Nov); the earlier Part A draft (19 Nov) reused as source material.
+**Evidence:** Module email (22 Nov 2026) and the received single form (CSE UG Ethics Declaration v1.0); the earlier Part A draft (19 Nov) reused as source material.

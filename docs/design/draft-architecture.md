@@ -1,6 +1,6 @@
 # Oracle — Draft Architecture and First Design Diagrams (v0)
 
-**Date:** 2026-11-19 · **Status:** first draft for the A2 meeting and CW1 B6 ·
+**Date:** 2026-11-19 · **Status:** first draft for CW1 B6 ·
 **Basis:** spikes 1–3 (all GO), corpus v1 + fixtures D-01/D-02, DEC-005
 (Python intake/checking), DEC-006 (no AI in the deliverable), DEC-007
 (three-valued answers). Diagrams are Mermaid sources — version-controlled

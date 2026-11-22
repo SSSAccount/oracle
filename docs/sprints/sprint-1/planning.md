@@ -14,7 +14,7 @@
 | PB-05 | Fixture set assembly: 2–3 real worksheet documents + 2–3 advanced-math documents with commutative diagrams | 5 | Extends the D-01 pattern: provenance + permission basis per fixture. Worksheet sources are owner-held (module worksheets); advanced-math candidates identified during assembly, arXiv-licensed sources preferred |
 | PB-16 | Requirements elicitation record, drafted from the published-evidence base | 5 | **Carries a known dependency:** Q-02 (client role) — if unanswered at planning, the record is built from the published evidence and labelled accordingly (interim, per R-02 mitigation). Not blocked: the evidence base (the published research synthesis) exists either way |
 
-Capacity check: committed **15 pts** over 3 days — deliberately over-committed vs the Sprint 0 calibration (5/8 done, 8-pts-first-sprint baseline), for two reasons: (a) the retro action on partitioning says committed points should cover controllable work; all three cards are controllable; (b) the CW1 deadline (Mon 23 Nov) makes Sprint 1 a hard box. Fallback order if time runs short: PB-07 first (the goal), then PB-05 (feeds evaluation), then PB-16 (has an interim path). The A3/A4 meetings land inside the sprint, providing external checkpoints.
+Capacity check: committed **15 pts** over 3 days — deliberately over-committed vs the Sprint 0 calibration (5/8 done, 8-pts-first-sprint baseline), for two reasons: (a) the retro action on partitioning says committed points should cover controllable work; all three cards are controllable; (b) the CW1 deadline (Mon 23 Nov) makes Sprint 1 a hard box. Fallback order if time runs short: PB-07 first (the goal), then PB-05 (feeds evaluation), then PB-16 (has an interim path). The A3/A4 meetings would have landed inside the sprint as external checkpoints; every scheduled meeting was cancelled, so the sprint ran against its goal and the module's assessment requirements instead.
 
 Research spike this sprint: **PB-07** (the one open-ended item; PB-05 and PB-16 are bounded).
 
@@ -29,11 +29,11 @@ Research spike this sprint: **PB-07** (the one open-ended item; PB-05 and PB-16 
 | Item | State |
 |---|---|
 | PB-12 | Blocked on R-11 (GitHub restore); on restore: single push + Projects board import + supervisor add. Zero sprint cost. |
-| PB-14 | Closes at the A2 meeting (today); answers → decision log; gates PB-04 only, not PB-16's interim path. |
+| PB-14 | Blocked — the scheduled A2 meeting was cancelled (no supervision meeting possible); answers resolved provisionally from module materials, held for the viva; gates PB-04 only, not PB-16's interim path. |
 
 ## Risks checked this sprint
 
-- **R-02 (client role):** PB-16's interim path (evidence-base record, labelled) means the sprint goal does not depend on the A2 answer.
+- **R-02 (client role):** PB-16's interim path (evidence-base record, labelled) means the sprint goal does not depend on the supervisor's answer (none was possible — provisional resolution in the decision log).
 - **R-11 (GitHub):** PB-12 carried outside commitment; DEC-008 regime continues (daily cloud backup).
 - **DEC-005 risk (parser feasibility):** the spike exists to retire this risk; NO-GO would trigger the recorded fallback (hand-encoding lane or an existing parser, re-decision in the log) — the sprint goal is written so a clean NO-GO still closes the goal ("feasibility **tested**", not "parser built").
 - **CW1 deadline compression (DEC-009):** Sprint 1 must be fully recorded by Sun 22 Nov. CW1 assembly items (portfolio Sat 21, freeze Sun 22) run in parallel and are outside the sprint commitment — they are the owner's calendar, not sprint cards.

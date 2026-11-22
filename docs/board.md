@@ -41,7 +41,7 @@ read off it directly.
 
 * [x] PB-13 — Run Sprint 0 ceremonies and record all four artefacts · 3 · Must — closed 2026-11-19 (review + retro written; burndown committed)
 * [x] PB-06 — Hand-encode one real pullback square as structured data · 2 · Must — closed 2026-11-19 (D-01: Leinster BCT 5.1.17(b), fixture + JSON + provenance — `fixtures/diagrams/`)
-* [x] PB-14 — Ask the supervisor the two framing questions (Q-01, Q-02) · 1 · Must — closed 2026-11-19 (asked at the A2 meeting; answers to be recorded by owner from meeting notes — decision log pending table)
+* [ ] PB-14 — Ask the supervisor the two framing questions (Q-01, Q-02) · 1 · Must — blocked: every scheduled supervision meeting was cancelled (supervisor unavailable; see the worklog 2026-11-22 correction); provisional answers from the module materials are recorded in the decision log, to be confirmed at the viva
 * [x] PB-07 — tikz-cd parser spike: D-01 source → nodes/edges/paths JSON, acceptance = match hand-encoded oracle · 5 · Must — closed 2026-11-22 at sprint close (**GO**: D-01 exact match 19 Nov head start; D-02 quoted-label support, also exact; write-up in `spikes/spike3-tikzcd/spike3-notes.md`)
 * [x] PB-16 — Requirements elicitation record from the published-evidence base (interim path) · 5 · Should — closed 2026-11-22 (portfolio Chapter 4, evidence-based interim path per R-02 mitigation)
 

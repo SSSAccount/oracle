@@ -38,7 +38,7 @@ stable: `PB-xx`. Items move between priorities only via the decision log.
 | PB-17 | Draft UML suite + test strategy once requirements stabilise. | Should | 8 | B4; sequenced after elicitation |
 | PB-18 | Hi-fi prototype of the reading interface, screen-reader-accessible by construction. | Could | 8 | B5; shape fixed in Sprint 1 |
 | PB-19 | Portfolio assembly pass (B7 skeleton, declaration, referencing). | Should | 5 | Late sprint; checklist exists |
-| PB-20 | Presentation outline + slides draft. | Could | 3 | B9; due at A4 meeting |
+| PB-20 | Presentation outline + slides draft. | Could | 3 | B9; due at the viva |
 | PB-21 | Grow the expected-structure tree spec to v0.2 (B1 chain-eq type or nesting rule, B2 mat delimiter, B3 row/cell typing, B4 pre-order numbering, B5 ident list, B6 ident-application, B7 `...` marker collision) so the notation's known gaps are closed systematically. | Should | 3 | Spec gaps attested by the author report's judgment calls (fixtures/author-report.md); retro action 3 |
 
 ## Not yet scheduled (parking lot)
@@ -47,7 +47,7 @@ stable: `PB-xx`. Items move between priorities only via the decision log.
 - Revision-safe annotation workflow — parked alternative ALT-002.
 - Ecosystem integration decision (PreTeXt/PreFigure/LaTeXML home) — waits on addendum A6 results.
 
-Sprint 0 pulled: **PB-12, PB-13, PB-14, PB-06** (closed 19 Nov — PB-13, PB-06, PB-14 Done;
+Sprint 0 pulled: **PB-12, PB-13, PB-14, PB-06** (closed 19 Nov — PB-13, PB-06 Done; PB-14 blocked (scheduled meeting cancelled — held for the viva);
 PB-12 blocked on R-11). Sprint 1 pulled: **PB-07, PB-05, PB-16** (closed 22 Nov — PB-07 GO,
 PB-16 Done interim; PB-05 worksheet component split to PB-05b, carried). Sprint 2 pulls:
 **PB-05b, PB-08, PB-09** (planning at sprint close, 2026-11-22).
