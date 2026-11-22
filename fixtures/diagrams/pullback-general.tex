@@ -1,0 +1,26 @@
+% pullback-general.tex — Oracle diagram fixture D-02 (PB-05)
+%
+% tikz-cd translation of the verbatim xymatrix original from:
+%   Tom Leinster, "Basic Category Theory", CUP 2014; arXiv edition
+%   1612.09375, Definition 5.1.15, equation (5.7), book p. 114
+%   (PDF p. 124 region; source lims.tex lines 705-713, read 2026-11-19):
+%
+%     \xymatrix{
+%       P \ar[r]^{p_2} \ar[d]_{p_1}     &
+%       Y \ar[d]^t      \\
+%       X \ar[r]_s      &
+%       Z
+%     }
+%
+%   Original licence: CC BY-NC-SA 4.0 (arXiv edition). This fixture is an
+%   adaptation: xymatrix to tikz-cd, labels and grid unchanged. Label
+%   placement (^ above / _ below in xymatrix) maps to tikz-cd default vs
+%   swapped (') placement; placement is visual-only and not recorded in
+%   the oracle JSON (see README, D-02 note).
+%
+% Permission basis (PB-05 rule): CC BY-NC-SA 4.0 — attribution here and in
+% README.md; non-commercial academic use; ShareAlike honoured on derivatives.
+\begin{tikzcd}
+  P \arrow["p_2"]{r} \arrow["p_1"]{d} & Y \arrow["t"']{d} \\
+  X \arrow["s"']{r} & Z
+\end{tikzcd}

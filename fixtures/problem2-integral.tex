@@ -1,33 +1,6 @@
-% Oracle fixture 2 - definite integral by substitution, hand-written 2026-11-18
-% Corpus v0, Track A reading lane. Plain LaTeX, no packages needed.
-% Expected math elements: 12 total (4 display, 8 inline) - checked by oracle.
-
-\section*{Problem 2: Integration by Substitution}
-
-Evaluate the definite integral
-\[ \int_{0}^{1} \frac{x}{x^{2}+1} \, dx \]
-and give the exact value.
-
-\section*{Solution}
-
-\textbf{Step 1.} Substitute $u = x^{2}+1$, so that $du = 2x \, dx$.
-The limits change as well: when $x = 0$, $u = 1$; when $x = 1$, $u = 2$.
-
-\textbf{Step 2.} With this substitution the integral becomes
-\[
-\int_{0}^{1} \frac{x}{x^{2}+1} \, dx
-= \frac{1}{2} \int_{1}^{2} \frac{du}{u}.
-\]
-
-\textbf{Step 3.} Since the antiderivative of $1/u$ is $\ln|u|$,
-\[
-\frac{1}{2} \int_{1}^{2} \frac{du}{u}
-= \frac{1}{2} \left[ \ln|u| \right]_{1}^{2}
-= \frac{1}{2} \ln 2.
-\]
-
-\section*{Answer}
+% Oracle fixture 2 — definite integral with a trigonometric integrand (tree in problem2.tree)
+% Corpus v1, reading lane. Tree authored blind; judgment calls in author-report.md.
 
 \[
-\int_{0}^{1} \frac{x}{x^{2}+1} \, dx = \frac{1}{2} \ln 2.
+\int_{0}^{\pi/2} \frac{2\sin x}{1+\sin^{2}x}\,dx
 \]

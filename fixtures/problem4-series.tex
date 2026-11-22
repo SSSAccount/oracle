@@ -1,37 +1,6 @@
-% Oracle fixture 4 - ratio test on a power series, hand-written 2026-11-18
-% Corpus v0, Track A reading lane. Plain LaTeX, no packages needed.
-% Expected math elements: 9 total (5 display, 4 inline) - checked by oracle.
-
-\section*{Problem 4: Convergence of a Power Series}
-
-Show that the power series
-\[ \sum_{n=1}^{\infty} \frac{x^{n}}{n!} \]
-converges for every real number $x$.
-
-\section*{Solution}
-
-\textbf{Step 1.} Ratio test: for a series $\sum a_{n}$ with nonzero terms,
-the series converges absolutely if
-\[
-\lim_{n \to \infty} \left| \frac{a_{n+1}}{a_{n}} \right| < 1.
-\]
-
-\textbf{Step 2.} Here $a_{n} = x^{n}/n!$, so
-\[
-\left| \frac{a_{n+1}}{a_{n}} \right|
-= \frac{|x^{n+1}|}{(n+1)!} \cdot \frac{n!}{|x^{n}|}
-= \frac{|x|}{n+1}.
-\]
-
-\textbf{Step 3.} The ratio tends to
-\[
-\lim_{n \to \infty} \frac{|x|}{n+1} = 0 < 1,
-\]
-so the series converges absolutely for every real $x$.
-
-\section*{Answer}
+% Oracle fixture 4 — the general term of a Taylor series (tree in problem4.tree)
+% Corpus v1, reading lane. Tree authored blind; judgment calls in author-report.md.
 
 \[
-\sum_{n=1}^{\infty} \frac{x^{n}}{n!}
-\text{ converges absolutely for every real } x.
+\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}\,(x-a)^{n}
 \]

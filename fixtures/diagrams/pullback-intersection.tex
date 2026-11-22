@@ -1,0 +1,25 @@
+% pullback-intersection.tex — Oracle diagram fixture D-01 (PB-06)
+%
+% tikz-cd translation of the verbatim xymatrix original from:
+%   Tom Leinster, "Basic Category Theory", Cambridge University Press 2014;
+%   arXiv edition 1612.09375, Examples 5.1.17(b), book p. 117 (PDF p. 124).
+%   The original source (lims.tex:868-876, read 2026-11-19) is:
+%
+%     \xymatrix@M+.5ex{
+%       X \cap Y \ar@{^{(}->}[r] \ar@{^{(}->}[d]        &
+%       Y \ar@{^{(}->}[d]    \\
+%       X \ar@{^{(}->}[r]       &
+%       Z
+%     }
+%
+%   Original licence: CC BY-NC-SA 4.0 (arXiv edition, stated on its copyright
+%   page). This fixture is an adaptation: xymatrix syntax is translated to
+%   tikz-cd with labels, hook-arrow style and cell positions unchanged.
+%
+% Permission basis (PB-05 rule, recorded per fixture): CC BY-NC-SA 4.0 —
+% attribution given here and in README.md; non-commercial academic use;
+% ShareAlike honoured by keeping this notice attached to any derivative.
+\begin{tikzcd}
+  X \cap Y \arrow[hook]{r} \arrow[hook]{d} & Y \arrow[hook]{d} \\
+  X \arrow[hook]{r} & Z
+\end{tikzcd}

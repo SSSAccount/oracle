@@ -1,0 +1,33 @@
+{
+  "fixture_id": "D-01",
+  "title": "Intersection of subsets as a pullback square",
+  "source": {
+    "work": "Tom Leinster, Basic Category Theory",
+    "edition": "Cambridge University Press 2014; arXiv edition 1612.09375 (2016, updated 2025)",
+    "location": "Examples 5.1.17(b), book p. 117 (PDF p. 124); source file lims.tex lines 868-876",
+    "licence": "CC BY-NC-SA 4.0 (arXiv edition)",
+    "permission_basis": "CC BY-NC-SA 4.0 - attribution + this notice; non-commercial academic use; ShareAlike honoured on derivatives",
+    "accessed": "2026-11-19",
+    "url": "https://arxiv.org/abs/1612.09375",
+    "original_verbatim": "\\xymatrix@M+.5ex{\n  X \\cap Y \\ar@{^{(}->}[r] \\ar@{^{(}->}[d]        &\n  Y \\ar@{^{(}->}[d]    \\\\\n  X \\ar@{^{(}->}[r]       &\n  Z\n}"
+  },
+  "nodes": [
+    { "id": "n0", "label": "X \\cap Y", "row": 0, "col": 0 },
+    { "id": "n1", "label": "Y", "row": 0, "col": 1 },
+    { "id": "n2", "label": "X", "row": 1, "col": 0 },
+    { "id": "n3", "label": "Z", "row": 1, "col": 1 }
+  ],
+  "edges": [
+    { "id": "e1", "from": "n0", "to": "n1", "kind": "arrow", "style": "hook", "direction": "r", "label": null },
+    { "id": "e2", "from": "n0", "to": "n2", "kind": "arrow", "style": "hook", "direction": "d", "label": null },
+    { "id": "e3", "from": "n1", "to": "n3", "kind": "arrow", "style": "hook", "direction": "d", "label": null },
+    { "id": "e4", "from": "n2", "to": "n3", "kind": "arrow", "style": "hook", "direction": "r", "label": null }
+  ],
+  "paths": [
+    { "id": "p1", "kind": "node-reading", "order": "row-major", "traversal": ["n0", "n1", "n2", "n3"] },
+    { "id": "p2", "kind": "arrow-following", "traversal": ["n0", "n1", "n3"], "edges": ["e1", "e3"] },
+    { "id": "p3", "kind": "arrow-following", "traversal": ["n0", "n2", "n3"], "edges": ["e2", "e4"] }
+  ],
+  "path_rules": "p1: the overview reading (nodes in row-major source order). Arrow-following paths start at in-degree-0 nodes with out-edges (here only n0) and follow out-edges in source order (DFS), stopping when a node has no outgoing edge; the two branches through the square give p2 and p3.",
+  "notes": "Hand-encoded (PB-06) directly from the arXiv LaTeX source of the book, before any converter work; the reading order is row-major (n0, n1, n2, n3). Paths were hand-encoded 2026-11-19 before the parser emitted any (author-before-parse discipline); the parser's independent path derivation is the PB-07 acceptance check for paths."
+}

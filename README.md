@@ -21,8 +21,11 @@ Working name: **Oracle** (final product naming is an open decision, tracked in t
 | `docs/` | Working agreement, product backlog, release plan, decision log, risk register, worklog, sprint board (offline mirror) |
 | `docs/templates/` | Fill-in templates: stand-up log, sprint planning, review, retrospective |
 | `docs/sprints/` | One folder per sprint: planning, daily log, review, retrospective, burndown data |
+| `docs/design/` | Draft architecture and design diagrams |
+| `fixtures/` | Expected-structure corpus v1: problem sources, the specimen tree, trees 2–5 authored blind, the author judgment report, the tree-notation spec v0.1; diagram fixtures D-01/D-02 with provenance |
+| `spikes/` | Spike records: 1 MathML/MathJax reading lane, 2 MathCAT Nemeth braille lane, 3 tikz-cd parser |
 | `site/` | Landing page source (deployed at the project domain) |
-| `tools/` | Small deterministic helpers (e.g. burndown chart generator) |
+| `tools/` | Small deterministic helpers (tree format checker, burndown chart generator) |
 
 ## Process, in one line
 
@@ -41,5 +44,8 @@ live in `docs/sprints/`, one folder per sprint.
 
 ## Licence
 
-To be decided in Sprint 0 — MIT or Apache-2.0 under consideration; the decision will be
-recorded in `docs/decision-log.md` and applied to this repository.
+Sprint 0 closed with the licence decision still open (no DEC entry; the working
+agreement and backlog carry no licence card). To be decided in Sprint 1 and
+recorded in `docs/decision-log.md` — MIT or Apache-2.0 under consideration.
+Note: the *fixture* files carry their own per-fixture provenance and source
+licences (e.g. Leinster diagrams, CC BY-NC-SA 4.0) — see `fixtures/diagrams/README.md`.

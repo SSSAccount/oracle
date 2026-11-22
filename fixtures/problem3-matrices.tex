@@ -1,39 +1,11 @@
-% Oracle fixture 3 - matrix products AB and BA, hand-written 2026-11-18
-% Corpus v0, Track A reading lane. Plain LaTeX, no packages needed.
-% Expected math elements: 11 total (6 display, 5 inline) - checked by oracle.
-
-\section*{Problem 3: Matrix Products}
-
-Let
-\[ A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \]
-and
-\[ B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}. \]
-Compute the products $AB$ and $BA$, and compare the two results.
-
-\section*{Solution}
-
-\textbf{Step 1.} The $(1,1)$ entry of $AB$ combines row 1 of the first
-matrix with column 1 of the second:
-\[
-(AB)_{11} = 1 \cdot 5 + 2 \cdot 7 = 19.
-\]
-
-\textbf{Step 2.} Computing the other three entries the same way:
-\[
-AB = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}
-\]
-and
-\[
-BA = \begin{pmatrix} 23 & 34 \\ 31 & 46 \end{pmatrix}.
-\]
-
-\textbf{Step 3.} The two products are different: $AB \neq BA$.
-
-\section*{Answer}
+% Oracle fixture 3 — squaring a 2x2 matrix (tree in problem3.tree)
+% Corpus v1, reading lane. Tree authored blind; judgment calls in author-report.md.
 
 \[
-AB = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}
-\neq
-\begin{pmatrix} 23 & 34 \\ 31 & 46 \end{pmatrix}
-= BA.
+\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{2}
+=
+\begin{pmatrix}
+a^{2}+bc & ab+bd \\
+ac+cd & bc+d^{2}
+\end{pmatrix}
 \]

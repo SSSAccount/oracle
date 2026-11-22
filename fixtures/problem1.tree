@@ -1,120 +1,64 @@
-# Oracle expected trees - fixture 1 (derivative via quotient rule)
-# Hand-written from problem1-derivative.tex, 2026-11-18, BEFORE
-# consulting any converter output (Phase 2 ground rule).
-# Elements numbered in document order; total must match the
-# fixture header count (8).
+; problem1.tree — the corpus specimen (chain rule), showing the building method.
+; Trees 2–5 were authored blind; their judgment notes are in author-report.md.
 
-== element 1
-# f(x) = (2x+1)/(x^2+3)
-whole: eq
-  lhs: flat "f ( x )"
-  rhs: frac
-    num: flat "2 x + 1"
-    den:
-      - sup
-        base: ident "x"
-        exp: num 2
-      - op "+"
-      - num 3
+element 1 — the whole equation
+1 eq
+  lhs: element 2
+  rhs: element 7
 
-== element 2
-# u = 2x+1 (inline)
-whole: eq
-  lhs: ident "u"
-  rhs: flat "2 x + 1"
+element 2 — left side: d/dx as a fraction, then the fifth power
+2 flat
+  - element 3
+  - element 4
 
-== element 3
-# v = x^2+3 (inline)
-whole: eq
-  lhs: ident "v"
-  rhs:
+element 3 — the d/dx fraction exactly as written
+3 frac
+  num: ident  d
+  den: flat
+    - ident  d
+    - ident  x
+
+element 4 — (3x^2 + 1/x) to the fifth
+4 sup
+  base: element 5
+  exp: num  5
+
+element 5 — the parenthesized sum inside the power
+5 group
+  - element 6
+
+element 6 — the run 3x^2 + 1/x
+6 flat
+  - flat
+    - num  3
     - sup
-      base: ident "x"
-      exp: num 2
-    - op "+"
-    - num 3
+      base: ident  x
+      exp: num  2
+  - op  +
+  - frac
+    num: num  1
+    den: ident  x
 
-== element 4
-# f'(x) = [2(x^2+3) - (2x+1) * 2x] / (x^2+3)^2   (Step 1, quotient rule)
-whole: eq
-  lhs: flat "f ' ( x )"
-  rhs: frac
-    num:
-      - num 2
-      - group
-        body:
-          - sup
-            base: ident "x"
-            exp: num 2
-          - op "+"
-          - num 3
-      - op "-"
-      - group
-        body: flat "2 x + 1"
-      - op "*"
-      - num 2
-      - ident "x"
-    den: sup
-      base: group
-        body: ...
-      exp: num 2
+element 7 — right side: the product run 5 · (..)^4 · (6x - 1/x^2)
+7 flat
+  - num  5
+  - element 8
+  - op  *
+  - element 9
 
-== element 5
-# 2x^2 + 6 - 4x^2 - 2x = -2x^2 - 2x + 6   (Step 2, expand numerator)
-whole: eq
-  lhs:
-    - num 2
-    - sup
-      base: ident "x"
-      exp: num 2
-    - op "+"
-    - num 6
-    - op "-"
-    - num 4
-    - sup
-      base: ident "x"
-      exp: num 2
-    - op "-"
-    - num 2
-    - ident "x"
-  rhs:
-    - op "-"
-    - num 2
-    - sup
-      base: ident "x"
-      exp: num 2
-    - op "-"
-    - num 2
-    - ident "x"
-    - op "+"
-    - num 6
+element 8 — the fourth power of the same group
+8 sup
+  base: same: element 5
+  exp: num  4
 
-== element 6
-# -2 (inline)
-whole: flat "- 2"
-
-== element 7
-# f'(x) = -2(x^2+x-3)/(x^2+3)^2   (Step 3, factored form)
-whole: eq
-  lhs: flat "f ' ( x )"
-  rhs: frac
-    num:
-      - op "-"
-      - num 2
-      - group
-        body:
-          - sup
-            base: ident "x"
-            exp: num 2
-          - op "+"
-          - ident "x"
-          - op "-"
-          - num 3
-    den: sup
-      base: group
-        body: ...
-      exp: num 2
-
-== element 8
-# Answer: identical expression to element 7
-same: element 7
+element 9 — the group (6x - 1/x^2)
+9 group
+  - flat
+    - num  6
+    - ident  x
+    - op  -
+    - frac
+      num: num  1
+      den: sup
+        base: ident  x
+        exp: num  2

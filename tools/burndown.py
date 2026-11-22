@@ -7,7 +7,11 @@ case-insensitively): a title column (name/title/summary), a points column
 Rows without a numeric points value are ignored for the chart.
 
 Usage:
-    python3 tools/burndown.py <export.csv> <sprint-label>
+    python3 tools/burndown.py <export.csv> <sprint-label> [sprint-days]
+
+sprint-days defaults to 7 (Mon-Sun). Short sprints (DEC-009 compressed
+calendar: Sprint 0 and 1 run 3 days) pass their actual length so the ideal
+line is honest.
 Writes burndown.png next to the CSV. Chart is committed to the sprint folder.
 """
 import csv
@@ -32,7 +36,7 @@ plt.rcParams["axes.unicode_minus"] = False
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         print(__doc__)
         return 1
     csv_path, label = Path(sys.argv[1]), sys.argv[2]
@@ -73,7 +77,7 @@ def main() -> int:
     done = total - remaining
 
     # Ideal vs actual (actual = remaining today; extend as the sprint runs)
-    days = 7
+    days = int(sys.argv[3]) if len(sys.argv) > 3 else 7
     fig, ax = plt.subplots(figsize=(7, 4), constrained_layout=True)
     ax.plot([0, days], [total, 0], "--", color="#8899aa", label="Ideal")
     ax.plot([0], [total], "o", color="#162235", label="Committed")

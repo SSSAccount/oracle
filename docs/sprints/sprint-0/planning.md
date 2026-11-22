@@ -1,6 +1,6 @@
 # Sprint 0 — Planning
 
-**Date:** 2026-11-17 (Tuesday) · **Sprint:** 0 · **Sprint dates:** Tue 17 Nov – Sun 22 Nov 2026
+**Date:** 2026-11-17 (Tuesday) · **Sprint:** 0 · **Sprint dates:** Tue 17 Nov – Thu 19 Nov 2026 (re-dated DEC-009)
 
 ## Sprint goal (one sentence)
 
