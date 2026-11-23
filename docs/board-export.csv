@@ -1,0 +1,17 @@
+Title,Points,Status
+"PB-10 — Commutativity conditions checked mechanically, three-valued answers · 8 · Should",8,Backlog
+"PB-15 — Register domain + deploy landing page over HTTPS · 3 · Should",3,Backlog
+"PB-17 — UML suite + test strategy draft (after elicitation) · 8 · Should",8,Backlog
+"PB-18 — Hi-fi prototype of the reading interface, accessible by construction · 8 · Could",8,Backlog
+"PB-19 — Portfolio assembly pass (B7 skeleton, declaration, referencing) · 5 · Should",5,Backlog
+"PB-20 — Presentation outline + slides draft · 3 · Could",3,Backlog
+"PB-21 — Tree spec v0.2 (B1–B7 gap backlog from the author report) · 3 · Should",3,Backlog
+"PB-05b — Worksheet fixtures: 2–3 module worksheets encoded + per-fixture permission basis (split from PB-05 at Sprint 1 retro) · 3 · Must",3,In sprint
+"PB-08 — Spoken overview demonstrated on the pullback fixture · 5 · Must",5,In sprint
+"PB-09 — Node/arrow navigation demonstrated on the pullback fixture · 5 · Should",5,In sprint
+"PB-12 — Set up task board + Git repo, add supervisor, seed backlog + working agreement · 2 · Must (blocked on R-11 GitHub restore)",2,In progress
+"PB-14 — Ask the supervisor the two framing questions (Q-01, Q-02) · 1 · Must (blocked: meetings cancelled; provisional answers recorded, confirm at the viva)",1,In progress
+"PB-13 — Run Sprint 0 ceremonies and record all four artefacts · 3 · Must",3,Done
+"PB-06 — Hand-encode one real pullback square as structured data · 2 · Must",2,Done
+"PB-07 — tikz-cd parser spike: D-01 source → nodes/edges/paths JSON, acceptance = match hand-encoded oracle · 5 · Must",5,Done
+"PB-16 — Requirements elicitation record from the published-evidence base (interim path) · 5 · Should",5,Done

@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- B8 SEO basics: title (under ~60 chars), meta description (under ~160 chars) -->
 <title>Oracle — Non-visual access to commutative diagrams</title>
 <meta name="description" content="Oracle turns tikz-cd commutative-diagram source into speech-navigable, checkable structure for blind and low-vision mathematicians.">
 <!-- Social preview (Open Graph) -->
@@ -11,11 +10,6 @@
 <meta property="og:description" content="A diagram-as-data access layer: read, navigate and verify commutative diagrams by ear.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<!-- og:image: uncomment and point at a hosted preview image at deployment time
-<meta property="og:image" content="https://YOUR-DOMAIN/social-preview.png">
-<meta name="twitter:image" content="https://YOUR-DOMAIN/social-preview.png">
--->
-<!-- Structured data (JSON-LD): fill the url fields at deployment time -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,20 +18,12 @@
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Web",
   "description": "Non-visual access to commutative diagrams: turns tikz-cd source into speech-navigable, checkable structure for blind and low-vision mathematicians.",
-  "url": "https://YOUR-DOMAIN/",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
-<!-- Favicon: inline SVG placeholder — replace with real logo file when branding is final -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B6B7A'/%3E%3Cpath d='M8 8h12M8 8v16M8 16h10' stroke='%2337DCF2' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-/* ── Oracle landing page v2 — single self-contained file, no build step ──
-   Palette follows the project documents (DM-1: deep navy #162235, cyan #37DCF2, teal #1B6B7A).
-   v2 (2026-11-19): worked-example section (real D-01 pullback square + reading protocol),
-   concrete prototype mock-up frames replacing dashed screenshot boxes, solo-team section.
-   Branding (final name, logo mark) remains open pending the branding decision.
-   Accessibility built in: landmarks, skip link, contrast-checked colours, visible focus,
-   reduced-motion respect, scalable text (no fixed px heights on text containers). */
+/* Oracle landing page v2 (19 Nov 2026) — one self-contained file, no build step. DM-1 palette. */
 :root{
   --navy:#162235; --navy-2:#1d3350; --cyan:#37DCF2; --cyan-dim:#2ab8cc;
   --teal:#1B6B7A; --ink:#0f1b2d; --body:#2a3648; --muted:#5b6b80;
@@ -133,7 +119,6 @@ footer a{color:#cfe0ee}
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Oracle home">
-      <!-- PLACEHOLDER LOGO — replace with the real mark when branding is final -->
       <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1B6B7A"/><path d="M8 8h12M8 8v16M8 16h10" stroke="#37DCF2" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
       <span><span class="name">Oracle</span><span class="tag">Diagram access</span></span>
     </a>
@@ -290,7 +275,7 @@ footer a{color:#cfe0ee}
     <div class="team">
       <div class="avatar" aria-hidden="true">O</div>
       <div class="bio">
-        <p><strong>[Your name]</strong> — developer and researcher. Oracle is being built as a solo final-year agile project: evidence-driven, in weekly sprints, grounded in the published accessibility literature and validated at every lane (parser, speech, braille) before being trusted. The team-worded artefacts of the module are being mapped onto the solo arrangement with the supervisor's guidance (standing question Q-01).</p>
+        <p><strong>Mohomed Rizwan Sulaiman</strong> — developer and researcher. Oracle is being built as a solo final-year agile project: evidence-driven, in weekly sprints, grounded in the published accessibility literature and validated at every lane (parser, speech, braille) before being trusted. The team-worded artefacts of the module are being mapped onto the solo arrangement with the supervisor's guidance (standing question Q-01).</p>
       </div>
     </div>
   </div>
@@ -301,8 +286,6 @@ footer a{color:#cfe0ee}
     <h2 id="contact-h"><span class="num" style="color:#37DCF2">07 — Get involved</span>Tell us what you need to read.</h2>
     <p>If you are a blind or low-vision student or researcher of mathematics, an accessibility officer, or a lecturer who wants diagram materials that work for every student — we would like to hear from you.</p>
     <a class="btn btn-primary" href="mailto:contact@example.com?subject=Oracle%20diagram%20access">Email the project</a>
-    <!-- Call to action: mailto keeps the page data-collection-free (no privacy notice required beyond this note).
-         Replace contact@example.com with a real address. Add social links below when accounts exist. -->
   </div>
 </section>
 
@@ -316,7 +299,6 @@ footer a{color:#cfe0ee}
     </div>
     <div>
       <ul>
-        <!-- PLACEHOLDER LINKS — point at real repository/social accounts when they exist -->
         <li><a href="mailto:contact@example.com">Email</a></li>
         <li><a href="https://github.com/" rel="noopener">Repository</a></li>
       </ul>
