@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oracle â€” Non-visual access to commutative diagrams</title>
+<title>Oracle &mdash;” Non-visual access to commutative diagrams</title>
 <meta name="description" content="Oracle turns tikz-cd commutative-diagram source into speech-navigable, checkable structure for blind and low-vision mathematicians.">
 <!-- Social preview (Open Graph) -->
-<meta property="og:title" content="Oracle â€” Non-visual access to commutative diagrams">
+<meta property="og:title" content="Oracle &mdash;” Non-visual access to commutative diagrams">
 <meta property="og:description" content="A diagram-as-data access layer: read, navigate and verify commutative diagrams by ear.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
@@ -24,7 +24,7 @@
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B6B7A'/%3E%3Cpath d='M8 8h12M8 8v16M8 16h10' stroke='%2337DCF2' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-/* Oracle landing page v2 (19 Nov 2026) â€” one self-contained file, no build step. DM-1 palette. */
+/* Oracle landing page v2 (19 Nov 2026) &mdash;” one self-contained file, no build step. DM-1 palette. */
 :root{
   --navy:#162235; --navy-2:#1d3350; --cyan:#37DCF2; --cyan-dim:#2ab8cc;
   --teal:#1B6B7A; --ink:#0f1b2d; --body:#2a3648; --muted:#5b6b80;
@@ -102,8 +102,8 @@ footer a{color:#cfe0ee}
 .sd-q strong{color:#5ee5ff}
 /* Prototype mockup frames */
 .mock{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
-.mock-head{background:var(--navy);color:#cfe0ee;font-family:Verdana,Arial,sans-serif;font-size:.75rem;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center}
-.mock-head b{color:#fff}
+.mock-{background:var(--navy);color:#cfe0ee;font-family:Verdana,Arial,sans-serif;font-size:.75rem;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center}
+.mock- b{color:#fff}
 .mock-body{padding:1rem 1.1rem;font-size:.88rem;line-height:1.65}
 .mock-body .row{display:flex;gap:.6rem;padding:.35rem 0;border-bottom:1px dotted var(--line);flex-wrap:wrap}
 .mock-body .row:last-child{border-bottom:none}
@@ -143,7 +143,7 @@ footer a{color:#cfe0ee}
   <div class="wrap">
     <p class="kicker">Mathematics accessibility for blind and low-vision readers</p>
     <h1 id="hero-h">Commutative diagrams you can read, navigate and verify by ear.</h1>
-    <p class="lead">Oracle turns existing tikz-cd diagram source into structured, speech-navigable data â€” so a blind or low-vision student or researcher can explore a diagram's objects and arrows, follow paths, and check its commuting conditions independently.</p>
+    <p class="lead">Oracle turns existing tikz-cd diagram source into structured, speech-navigable data &mdash;” so a blind or low-vision student or researcher can explore a diagram's objects and arrows, follow paths, and check its commuting conditions independently.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact">Get in touch</a>
       <a class="btn btn-ghost" href="#example">See it work on a real diagram</a>
@@ -160,29 +160,29 @@ footer a{color:#cfe0ee}
 
 <section id="problem" aria-labelledby="problem-h">
   <div class="wrap">
-    <h2 id="problem-h"><span class="num">01 â€” The problem</span>Advanced mathematics has a visual monopoly on its diagrams.</h2>
-    <p>Algebra, topology and category theory run on commutative diagrams â€” objects connected by labelled arrows, with conditions that certain paths compose equally. Today those diagrams reach blind and low-vision readers, if at all, as prose descriptions written by a sighted intermediary. The evidence says that is not access: fewer than a third of described mathematical images are understood correctly, and a large share of vision-impaired students simply avoid the graphics altogether â€” with real consequences for the fields they choose.</p>
-    <p>The workaround that actually survives in practice is reading the raw LaTeX source with a screen reader. That proves linear access works â€” but it offers no navigation between the parts of a diagram, no overview, and no way to check a commuting condition without working everything out by hand.</p>
+    <h2 id="problem-h"><span class="num">01 &mdash;” The problem</span>Advanced mathematics has a visual monopoly on its diagrams.</h2>
+    <p>Algebra, topology and category theory run on commutative diagrams &mdash;” objects connected by labelled arrows, with conditions that certain paths compose equally. Today those diagrams reach blind and low-vision readers, if at all, as prose descriptions written by a sighted intermediary. The evidence says that is not access: fewer than a third of described mathematical images are understood correctly, and a large share of vision-impaired students simply avoid the graphics altogether &mdash;” with real consequences for the fields they choose.</p>
+    <p>The workaround that actually survives in practice is reading the raw LaTeX source with a screen reader. That proves linear access works &mdash;” but it offers no navigation between the parts of a diagram, no overview, and no way to check a commuting condition without working everything out by hand.</p>
     <p class="note">Â¹ Butler, Holloway, Marriott &amp; Goncu (2016); Emerson &amp; Anderson (2018); Torres &amp; Barwaldt (2019). Figures from published studies cited on the project's evidence page.</p>
   </div>
 </section>
 
 <section id="solution" class="alt" aria-labelledby="solution-h">
   <div class="wrap">
-    <h2 id="solution-h"><span class="num">02 â€” The solution</span>Treat the diagram as data, not as a picture.</h2>
+    <h2 id="solution-h"><span class="num">02 &mdash;” The solution</span>Treat the diagram as data, not as a picture.</h2>
     <p>A commutative diagram is already structured information in its source: named objects, labelled arrows between them, and declared path equalities. Oracle builds on that structure instead of fighting the pixels:</p>
     <div class="steps">
-      <div class="step"><h3>Intake</h3><p>Parse existing tikz-cd and quiver source into a graph of objects and arrows â€” no re-authoring, no OCR, no sighted intermediary.</p></div>
+      <div class="step"><h3>Intake</h3><p>Parse existing tikz-cd and quiver source into a graph of objects and arrows &mdash;” no re-authoring, no OCR, no sighted intermediary.</p></div>
       <div class="step"><h3>Navigate</h3><p>Move through the diagram by ear: an overview, then object-by-object and arrow-by-arrow reading, following paths the way the mathematics does.</p></div>
-      <div class="step"><h3>Verify</h3><p>Declared commuting conditions are checked computationally, and the answer â€” verified, refuted, or unknown â€” is reported honestly.</p></div>
+      <div class="step"><h3>Verify</h3><p>Declared commuting conditions are checked computationally, and the answer &mdash;” verified, refuted, or unknown &mdash;” is reported honestly.</p></div>
     </div>
   </div>
 </section>
 
 <section id="example" class="alt" aria-labelledby="example-h">
   <div class="wrap">
-    <h2 id="example-h"><span class="num">03 â€” A worked example</span>One diagram, two ways to meet it.</h2>
-    <p>Below: a pullback square from a real category-theory textbook (Leinster, <em>Basic Category Theory</em>). A sighted reader meets it as a picture. Oracle reads the same diagram's own source â€” the structure is identical, the channel is different.</p>
+    <h2 id="example-h"><span class="num">03 &mdash;” A worked example</span>One diagram, two ways to meet it.</h2>
+    <p>Below: a pullback square from a real category-theory textbook (Leinster, <em>Basic Category Theory</em>). A sighted reader meets it as a picture. Oracle reads the same diagram's own source &mdash;” the structure is identical, the channel is different.</p>
     <div class="example-grid">
       <div class="ex-panel">
         <h3>What a sighted reader sees</h3>
@@ -205,7 +205,7 @@ footer a{color:#cfe0ee}
       <div class="ex-panel">
         <h3>What Oracle reads aloud</h3>
         <div class="speech-demo" aria-label="Structured reading of the pullback square">
-          <p class="sd-h">Overview â€” 4 objects, 4 arrows, 1 declared equality</p>
+          <p class="sd-h">Overview &mdash;” 4 objects, 4 arrows, 1 declared equality</p>
           <p>Objects: P, A, B, C.</p>
           <p>Arrows: f from A to C. g from B to C. p&#8321; from P to A. p&#8322; from P to B.</p>
           <p>Declared equality: g &#8728; p&#8322; = f &#8728; p&#8321;.</p>
@@ -213,57 +213,57 @@ footer a{color:#cfe0ee}
         </div>
       </div>
     </div>
-    <p class="note">Reading protocol follows the research-backed structure: objects first, then arrows with domains and codomains, then the equalities â€” then the reader can ask for path composites or a commutativity check.</p>
+    <p class="note">Reading protocol follows the research-backed structure: objects first, then arrows with domains and codomains, then the equalities &mdash;” then the reader can ask for path composites or a commutativity check.</p>
   </div>
 </section>
 
 <section id="features" aria-labelledby="features-h">
   <div class="wrap">
-    <h2 id="features-h"><span class="num">04 â€” Key features</span>Designed with the mathematics inside.</h2>
+    <h2 id="features-h"><span class="num">04 &mdash;” Key features</span>Designed with the mathematics inside.</h2>
     <div class="cols">
       <div class="card"><h3>Source-aware intake</h3><p>Works from the LaTeX that authors already write, so published material becomes accessible without anyone redrawing it.</p></div>
       <div class="card"><h3>Structured speech navigation</h3><p>An explicit reading protocol: objects first, then arrows with their domains and codomains, then the equalities that make the diagram commute.</p></div>
       <div class="card"><h3>Computational checking</h3><p>Path-equality checks give the reader something prose never can: an answer to "does this square actually commute?"</p></div>
-      <div class="card"><h3>Screen-reader first</h3><p>Built for the tools blind readers already use â€” the accessibility of the tool itself is the project's credibility test.</p></div>
+      <div class="card"><h3>Screen-reader first</h3><p>Built for the tools blind readers already use &mdash;” the accessibility of the tool itself is the project's credibility test.</p></div>
       <div class="card"><h3>Open ecosystem path</h3><p>Designed to live inside the open mathematics-publishing ecosystem rather than as another walled tool.</p></div>
-      <div class="card"><h3>No AI in the deliverable</h3><p>Deterministic parsing and checking â€” the reading you hear is the mathematics that is there.</p></div>
+      <div class="card"><h3>No AI in the deliverable</h3><p>Deterministic parsing and checking &mdash;” the reading you hear is the mathematics that is there.</p></div>
     </div>
   </div>
 </section>
 
 <section id="prototype" class="alt" aria-labelledby="prototype-h">
   <div class="wrap">
-    <h2 id="prototype-h"><span class="num">05 â€” The prototype</span>What it looks like today.</h2>
-    <p>The prototype is under active development in weekly sprints. The three views below are mock-ups of the interface as designed; the underlying lanes are already built and tested â€” the parser matched hand-encoded textbook diagrams exactly, and the braille lane passed all 16 of its acceptance checks.</p>
+    <h2 id="prototype-h"><span class="num">05 &mdash;” The prototype</span>What it looks like today.</h2>
+    <p>The prototype is under active development in weekly sprints. The three views below are mock-ups of the interface as designed; the underlying lanes are already built and tested &mdash;” the parser matched hand-encoded textbook diagrams exactly, and the braille lane passed all 16 of its acceptance checks.</p>
     <div class="shots">
       <div class="mock">
-        <div class="mock-head"><b>Oracle â€” Diagram view</b><span>fixture: pullback square (D-01)</span></div>
+        <div class="mock-head"><b>Oracle &mdash;” Diagram view</b><span>fixture: pullback square (D-01)</span></div>
         <div class="mock-body">
-          <div class="row"><span class="lbl">Source</span><span class="val">tikz-cd, parsed &#10003; â€” 4 objects, 4 arrows, 1 declared equality</span></div>
+          <div class="row"><span class="lbl">Source</span><span class="val">tikz-cd, parsed &#10003; &mdash;” 4 objects, 4 arrows, 1 declared equality</span></div>
           <div class="row"><span class="lbl">Objects</span><span class="val">P, A, B, C</span></div>
           <div class="row"><span class="lbl">Arrows</span><span class="val">f: A&#8594;C &nbsp; g: B&#8594;C &nbsp; p&#8321;: P&#8594;A &nbsp; p&#8322;: P&#8594;B</span></div>
           <div class="row"><span class="lbl">Equality</span><span class="val">g&#8728;p&#8322; = f&#8728;p&#8321;</span></div>
-          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">READY</span> â€” navigable by keyboard and screen reader</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">READY</span> &mdash;” navigable by keyboard and screen reader</span></div>
         </div>
       </div>
       <div class="mock">
-        <div class="mock-head"><b>Oracle â€” Speech walkthrough</b><span>reading protocol</span></div>
+        <div class="mock-head"><b>Oracle &mdash;” Speech walkthrough</b><span>reading protocol</span></div>
         <div class="mock-body">
           <div class="row"><span class="lbl">Step 1</span><span class="val">Overview: 4 objects, 4 arrows, 1 equality</span></div>
           <div class="row"><span class="lbl">Step 2</span><span class="val">Objects: P, A, B, C</span></div>
           <div class="row"><span class="lbl">Step 3</span><span class="val">Arrows with domains and codomains</span></div>
           <div class="row"><span class="lbl">Step 4</span><span class="val">Declared equality read out</span></div>
-          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">VALIDATED</span> â€” MathJax explorer lane, spike 1</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val"><span class="ok">VALIDATED</span> &mdash;” MathJax explorer lane, spike 1</span></div>
         </div>
       </div>
       <div class="mock">
-        <div class="mock-head"><b>Oracle â€” Check report</b><span>three-valued answers</span></div>
+        <div class="mock-head"><b>Oracle &mdash;” Check report</b><span>three-valued answers</span></div>
         <div class="mock-body">
           <div class="row"><span class="lbl">Query</span><span class="val">Does the pullback square commute?</span></div>
-          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="ok">VERIFIED</span> â€” both composites agree</span></div>
+          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="ok">VERIFIED</span> &mdash;” both composites agree</span></div>
           <div class="row"><span class="lbl">Query</span><span class="val">General commutativity of the ambient category?</span></div>
-          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="pend">UNKNOWN</span> â€” not decidable from the diagram alone; reported honestly</span></div>
-          <div class="row"><span class="lbl">Status</span><span class="val">DESIGN â€” checker spine specified, build in backlog</span></div>
+          <div class="row"><span class="lbl">Answer</span><span class="val"><span class="pend">UNKNOWN</span> &mdash;” not decidable from the diagram alone; reported honestly</span></div>
+          <div class="row"><span class="lbl">Status</span><span class="val">DESIGN &mdash;” checker spine specified, build in backlog</span></div>
         </div>
       </div>
     </div>
@@ -272,11 +272,11 @@ footer a{color:#cfe0ee}
 
 <section id="team" aria-labelledby="team-h">
   <div class="wrap">
-    <h2 id="team-h"><span class="num">06 â€” The team</span>Who is building Oracle.</h2>
+    <h2 id="team-h"><span class="num">06 &mdash;” The team</span>Who is building Oracle.</h2>
     <div class="team">
       <div class="avatar" aria-hidden="true">O</div>
       <div class="bio">
-        <p><strong>Mohomed Rizwan Sulaiman</strong> â€” developer and researcher. Oracle is being built as a solo final-year agile project: evidence-driven, in weekly sprints, grounded in the published accessibility literature and validated at every lane (parser, speech, braille) before being trusted. The team-worded artefacts of the module are being mapped onto the solo arrangement with the supervisor's guidance (standing question Q-01).</p>
+        <p><strong>Mohomed Rizwan Sulaiman</strong> &mdash;” developer and researcher. Oracle is being built as a solo final-year agile project: evidence-driven, in weekly sprints, grounded in the published accessibility literature and validated at every lane (parser, speech, braille) before being trusted. The team-worded artefacts of the module are being mapped onto the solo arrangement with the supervisor's guidance (standing question Q-01).</p>
       </div>
     </div>
   </div>
@@ -284,8 +284,8 @@ footer a{color:#cfe0ee}
 
 <section id="contact" class="cta-band" aria-labelledby="contact-h">
   <div class="wrap">
-    <h2 id="contact-h"><span class="num" style="color:#37DCF2">07 â€” Get involved</span>Tell us what you need to read.</h2>
-    <p>If you are a blind or low-vision student or researcher of mathematics, an accessibility officer, or a lecturer who wants diagram materials that work for every student â€” we would like to hear from you.</p>
+    <h2 id="contact-h"><span class="num" style="color:#37DCF2">07 &mdash;” Get involved</span>Tell us what you need to read.</h2>
+    <p>If you are a blind or low-vision student or researcher of mathematics, an accessibility officer, or a lecturer who wants diagram materials that work for every student &mdash;” we would like to hear from you.</p>
     <a class="btn btn-primary" href="mailto:sulaiman.20232616@iit.ac.lk?subject=Oracle%20diagram%20access">Email the project</a>
   </div>
 </section>
@@ -295,7 +295,7 @@ footer a{color:#cfe0ee}
 <footer class="site">
   <div class="wrap foot-cols">
     <div>
-      <p><strong style="color:#fff">Oracle</strong> â€” non-visual access to commutative diagrams.</p>
+      <p><strong style="color:#fff">Oracle</strong> &mdash;” non-visual access to commutative diagrams.</p>
       <p style="margin-top:.4rem">An agile student project. Prototype in development.</p>
     </div>
     <div>
